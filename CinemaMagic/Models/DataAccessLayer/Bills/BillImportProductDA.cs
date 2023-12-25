@@ -1,0 +1,68 @@
+﻿using Microsoft.Data.SqlClient;
+using System.Data;
+
+namespace CinemaMagic.Models.DataAccessLayer.Bills
+{
+    public class BillImportProductDA : DataAccess
+    {
+        public long GetOutcomeByMonth(string month)
+        {
+            long sumOutcome = 0;
+            try
+            {
+                using (var connection = GetConnection())
+                using (var command = new SqlCommand())
+                {
+                    connection.Open();
+                    command.Connection = connection;
+                    command.CommandText = "SELECT Total FROM [Bill_ImportProduct] WHERE MONTH(BillDate)=@month AND YEAR(BillDate)=YEAR(GETDATE())";
+                    command.Parameters.Add("@month", SqlDbType.Int).Value = month;
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            sumOutcome += Convert.ToInt64(reader[0].ToString());
+                        }
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return sumOutcome;
+        }
+        public long GetOutcomeByYear(string year)
+        {
+            long sumOutcome = 0;
+            try
+            {
+                using (var connection = GetConnection())
+                using (var command = new SqlCommand())
+                {
+                    connection.Open();
+                    command.Connection = connection;
+                    command.CommandText = "SELECT Total FROM [Bill_ImportProduct] WHERE YEAR(BillDate)=@year";
+                    command.Parameters.Add("@year", SqlDbType.Int).Value = year;
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            sumOutcome += Convert.ToInt64(reader[0].ToString());
+                        }
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return sumOutcome;
+        }
+
+    }
+}
