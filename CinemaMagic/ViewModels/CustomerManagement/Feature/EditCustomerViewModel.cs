@@ -1,5 +1,7 @@
 ﻿using CinemaMagic.Models.DataAccessLayer;
 using CinemaMagic.Models.DTOs;
+using CinemaMagic.Views.CustomerManagement;
+using CinemaMagic.Views.MessageBox;
 using System.Windows.Input;
 
 namespace CinemaMagic.ViewModels.CustomerManagement
@@ -51,7 +53,7 @@ namespace CinemaMagic.ViewModels.CustomerManagement
 
 
 
-        //dòng SĐT
+        // Phone number line
         private string phoneNumber;
         public string PhoneNumber
         {
@@ -184,7 +186,7 @@ namespace CinemaMagic.ViewModels.CustomerManagement
         {
             CustomerDA customerDA = new CustomerDA();
             customerDA.editCustomer(new CustomerDTO(customer.Id, FullName, PhoneNumber, Email, RegDate.Value.ToString("yyyy-MM-dd"), int.Parse(Point)));
-            YesMessageBox mb = new YesMessageBox("Thông báo", "Sửa thông tin khách hàng thành công");
+            YesMessageBox mb = new YesMessageBox("Notification", "Customer information updated successfully");
             mb.ShowDialog();
             wd.Close();
         }
@@ -200,7 +202,7 @@ namespace CinemaMagic.ViewModels.CustomerManagement
         {
             if (string.IsNullOrWhiteSpace(FullName))
             {
-                FullNameError = "Họ và tên không được để trống!";
+                FullNameError = "First and last name cannot be empty!";
                 _canAccept[0] = false;
             }
             else
@@ -215,12 +217,12 @@ namespace CinemaMagic.ViewModels.CustomerManagement
         {
             if (string.IsNullOrWhiteSpace(PhoneNumber))
             {
-                PhoneNumberError = "SĐT không được để trống!";
+                PhoneNumberError = "Phone number cannot be empty!";
                 _canAccept[1] = false;
             }
             else if (!PhoneNumber.All(char.IsDigit))
             {
-                PhoneNumberError = "Số điện thoại chỉ được chứa chữ số!";
+                PhoneNumberError = "Phone number can only contain digits!";
                 _canAccept[1] = false;
             }
             else
@@ -234,12 +236,12 @@ namespace CinemaMagic.ViewModels.CustomerManagement
         {
             if (string.IsNullOrWhiteSpace(Email))
             {
-                EmailError = "Email không được để trống!";
+                EmailError = "Email cannot be empty!";
                 _canAccept[2] = false;
             }
             else if (!Email.Contains("@"))
             {
-                EmailError = "Email không hợp lệ!";
+                EmailError = "Invalid email!";
                 _canAccept[2] = false;
             }
             else
@@ -256,7 +258,7 @@ namespace CinemaMagic.ViewModels.CustomerManagement
             DateTime Birth = new DateTime(int.Parse(birth[2]), int.Parse(birth[1]), int.Parse(birth[0]));
             if (RegDate < Birth)
             {
-                RegDateError = "Ngày đăng ký phải lớn hơn ngày sinh!";
+                RegDateError = "Registration date must be later than date of birth!";
                 _canAccept[3] = false;
             }
             else
@@ -270,17 +272,17 @@ namespace CinemaMagic.ViewModels.CustomerManagement
         {
             if (string.IsNullOrWhiteSpace(Point))
             {
-                PointError = "Point không hợp lệ!";
+                PointError = "Invalid point!";
                 _canAccept[4] = false;
             }
             else if (!Point.All(char.IsDigit))
             {
-                PointError = "Point không hợp lệ!";
+                PointError = "Invalid point!";
                 _canAccept[4] = false;
             }
             else if (!int.TryParse(Point, out int pointvalue))
             {
-                PointError = "Không hợp lệ!";
+                PointError = "Invalid!";
                 _canAccept[4] = false;
             }
             else
