@@ -1,6 +1,4 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Windows;
+﻿using System.Windows;
 
 namespace CinemaMagic
 {
@@ -9,6 +7,11 @@ namespace CinemaMagic
     /// </summary>
     public partial class App : Application
     {
+        private void ApplicationStart(object sender, EventArgs e)
+        {
+            LoginView loginView = new LoginView();
+            loginView.Show();
+        }
     }
 
 }
