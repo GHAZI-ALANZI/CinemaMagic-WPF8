@@ -1,4 +1,5 @@
 ﻿using CinemaMagic.Models.DataAccessLayer;
+using CinemaMagic.Views.Password;
 using System.Windows.Input;
 
 namespace CinemaMagic.ViewModels.ForgotPassword
