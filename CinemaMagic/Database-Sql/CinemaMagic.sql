@@ -5,11 +5,11 @@ go
 
 --use database
 go
-use CineMajesticImage
+use CinemaMagic
 go
 
 
--- staff table
+--staff
 go
 create table Staff
 (
@@ -77,7 +77,7 @@ go
 
 
 
---MOVIES
+-- MOVIES
 GO
 CREATE TABLE MOVIE
 (
@@ -103,6 +103,7 @@ GO
 
 
 
+
 --product
 go
 create table Product
@@ -119,15 +120,14 @@ go
 
 
 
---room
+
+-- room
 create table Auditorium
 (
 	Id int identity(1,1) primary key,
 	Name nvarchar(50) not null,
 	NumberOfSeats int not null,
 )
-
-
 
 insert into Auditorium(Name,NumberOfSeats)
 values(N'Phòng 1',176)
@@ -154,7 +154,7 @@ values(N'Phòng 7',176)
 
 
 
---Seat
+
 go
 create table Seat
 (
@@ -217,7 +217,7 @@ end
 go
 
 
---seat for room 1,2,3,4,5,6,7
+
 go
 execute sp_generate_seat_for_auditorium 1
 execute sp_generate_seat_for_auditorium 2
@@ -235,7 +235,7 @@ go
 
 
 
---show time
+
 go
 create table ShowTime
 (
@@ -249,10 +249,6 @@ create table ShowTime
 	Constraint FK_Movie_Id_ByShowTime foreign key(Movie_Id) references Movie(Id),
 )
 go
-
-
-
-
 
 go
 create table SeatForShowtime
@@ -269,7 +265,7 @@ go
 
 
 
---bill
+
 go
 create table Bill
 (
@@ -289,11 +285,6 @@ create table Bill
 )
 go
 
-
-
-
-
-
 go
 create table BillDetail
 (
@@ -307,10 +298,6 @@ create table BillDetail
     Constraint FK_ProductId_ByBillDeTail foreign key(Product_Id) references Product(ID)
 )
 go
-
-
-
-
 
 go
 create table Bill_AddMovie
@@ -355,7 +342,7 @@ go
 
 
 
---error
+-- error
 go
 CREATE TABLE ERRORS(
     id INT IDENTITY(1, 1) PRIMARY KEY,

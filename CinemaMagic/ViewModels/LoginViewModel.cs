@@ -1,5 +1,6 @@
 ﻿using CinemaMagic.Models.DataAccessLayer;
 using CinemaMagic.Models.DTOs;
+using CinemaMagic.Views;
 using System.Windows.Input;
 
 namespace CinemaMagic.ViewModels
@@ -69,17 +70,18 @@ namespace CinemaMagic.ViewModels
                     MainView mainView = new MainView(user.Staff_Id, wd);
                     wd.Hide();
                     mainView.ShowDialog();
-                    // Using app.shutdown so there's no need to log out when exiting mainview
+
                     break;
                 }
             }
 
             if (!check)
             {
-                ErrorMessage = "* Username or password is incorrect";
+                ErrorMessage = "Username or password is incorrect";
             }
 
         }
+
 
 
 
