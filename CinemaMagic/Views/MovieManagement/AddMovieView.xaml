@@ -1,0 +1,499 @@
+﻿<Window x:Class="CinemaMagic.Views.MovieManagement.AddMovieView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CinemaMagic.Views.MovieManagement"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    
+    Width="800"
+    Height="500"
+    AllowsTransparency="True"
+    Background="Transparent"
+    FontFamily="{materialDesign:MaterialDesignFont}"
+    FontSize="18"
+    ResizeMode="NoResize"
+    TextElement.FontSize="10"
+    TextElement.FontWeight="Medium"
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Border Background="White" CornerRadius="12">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="5" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="27" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="5" />
+            </Grid.RowDefinitions>
+
+            <!--  Top bar  -->
+
+            <Border
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Background="#DFD7BF"
+                CornerRadius="12,12,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="750" />
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="25" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        Grid.Column="0"
+                        Margin="20,0,0,0"
+                        VerticalAlignment="Center"
+                        FontFamily="Candara"
+                        FontSize="20"
+                        FontWeight="SemiBold"
+                        Foreground="#3F2305"
+                        Text="Add movie" />
+                    <Button
+                        x:Name="btnMinimize"
+                        Grid.Column="1"
+                        BorderThickness="0"
+                        Click="btnMinimize_Click"
+                        Content="-"
+                        Cursor="Hand"
+                        FontFamily="Montserrat"
+                        FontSize="16"
+                        Foreground="#623b00"
+                        Visibility="Hidden">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#F2EAD3" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#E4D4C5" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border
+                                    Width="18"
+                                    Height="18"
+                                    Background="{TemplateBinding Background}"
+                                    CornerRadius="9">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button
+                        x:Name="btnClose"
+                        Grid.Column="2"
+                        BorderThickness="0"
+                        Click="btnClose_Click"
+                        Content="X"
+                        Cursor="Hand"
+                        FontFamily="Montserrat"
+                        FontSize="12"
+                        Foreground="#fffaf5">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#3f2305" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#8B580B" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border
+                                    Width="18"
+                                    Height="18"
+                                    Background="{TemplateBinding Background}"
+                                    CornerRadius="9">
+                                    <ContentPresenter
+                                        Margin="0,1,0,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                </Grid>
+            </Border>
+
+
+            <!--  Content  -->
+
+
+            <StackPanel
+                Grid.Row="1"
+                Grid.Column="1"
+                Orientation="Horizontal">
+                <StackPanel Margin="15,10,0,0" Orientation="Vertical">
+                    <!--  movie Title  -->
+                    <TextBlock
+                        FontSize="15"
+                        FontWeight="Bold"
+                        Text="Movie title" />
+                    <TextBox
+                        Width="300"
+                        Margin="0,5,0,0"
+                        HorizontalAlignment="Left"
+                        FontSize="15"
+                        Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock
+                        FontSize="8.5"
+                        Foreground="Red"
+                        Text="{Binding TitleError}" />
+
+                </StackPanel>
+
+                <StackPanel Margin="30,10,0,0" Orientation="Vertical">
+
+                    <!--  Director  -->
+
+                    <TextBlock
+                        FontSize="15"
+                        FontWeight="Bold"
+                        Text="Director" />
+
+                    <TextBox
+                        Width="150"
+                        Margin="0,5,0,0"
+                        HorizontalAlignment="Left"
+                        FontSize="15"
+                        Text="{Binding Director, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock
+                        FontSize="8.5"
+                        Foreground="Red"
+                        Text="{Binding DirectorError}" />
+                </StackPanel>
+
+                <StackPanel Margin="30,10,0,0" Orientation="Vertical">
+
+                    <!--  Length   -->
+
+                    <TextBlock FontSize="15" FontWeight="Bold" Text="Duration"/>
+
+                    <TextBox
+                        Width="100"
+                        Margin="0,5,0,0"
+                        HorizontalAlignment="Left"
+                        FontSize="15"
+                        Text="{Binding Length, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock
+                        FontSize="8.5"
+                        Foreground="Red"
+                        Text="{Binding LengthError}" />
+                </StackPanel>
+
+                <StackPanel Margin="30,10,0,0" Orientation="Vertical">
+
+                    <!--  Director  -->
+
+                    <TextBlock FontSize="15" FontWeight="Bold" Text="Purchase price"/>
+
+                    <TextBox
+                        Width="135"
+                        Margin="0,5,0,0"
+                        HorizontalAlignment="Left"
+                        FontSize="15"
+                        Text="{Binding ImportPrice, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock
+                        FontSize="8.5"
+                        Foreground="Red"
+                        Text="{Binding ImportPriceError}" />
+                </StackPanel>
+
+            </StackPanel>
+
+            <StackPanel
+                Grid.Row="2"
+                Grid.Column="1"
+                Orientation="Horizontal">
+
+                <StackPanel Margin="15,10,0,0" Orientation="Vertical">
+
+                    <!--  Country  -->
+
+                    <TextBlock
+                        FontSize="15"
+                        FontWeight="Bold"
+                        Text="Country" />
+
+                    <TextBox
+                        Width="200"
+                        Margin="0,5,0,0"
+                        HorizontalAlignment="Left"
+                        FontSize="15"
+                        Text="{Binding Country, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock
+                        FontSize="8.5"
+                        Foreground="Red"
+                        Text="{Binding CountryError}" />
+                </StackPanel>
+
+                <StackPanel Margin="30,10,0,0" Orientation="Vertical">
+
+                    <!--  Language  -->
+
+                    <TextBlock
+                        FontSize="15"
+                        FontWeight="Bold"
+                        Text="Language" />
+
+                    <TextBox
+                        Width="180"
+                        Margin="0,5,0,0"
+                        HorizontalAlignment="Left"
+                        FontSize="15"
+                        Text="{Binding Language, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock
+                        FontSize="8.5"
+                        Foreground="Red"
+                        Text="{Binding LanguageError}" />
+                </StackPanel>
+
+                <StackPanel Margin="30,15,0,0" Orientation="Horizontal">
+
+                    <!--  Upload poster  -->
+
+                    <TextBlock
+                        Height="auto"
+                        FontSize="15"
+                        FontWeight="Bold"
+                        Text="Movie poster" />
+
+
+                    <Button
+                        Width="130"
+                        Margin="20,-40,0,0"
+                        Command="{Binding addImageCommand}">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Margin="-2,0,0,0" Kind="FolderImage" />
+                                <TextBlock Margin="5,0,0,0" Text="Select image" />
+                            </StackPanel>
+
+                        </Button.Content>
+                    </Button>
+
+                </StackPanel>
+
+            </StackPanel>
+
+            <StackPanel
+                Grid.Row="3"
+                Grid.RowSpan="3"
+                Grid.Column="1"
+                Orientation="Horizontal">
+
+
+
+                <StackPanel Margin="15,10,0,0" Orientation="Vertical">
+                    <TextBlock
+                        FontSize="15"
+                        FontWeight="Bold"
+                        Text="Release year" />
+                    <TextBox
+                        Width="110"
+                        Margin="0,5,0,0"
+                        HorizontalAlignment="Left"
+                        FontSize="15"
+                        Text="{Binding ReleaseYear, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock
+                        FontSize="8.5"
+                        Foreground="Red"
+                        Text="{Binding ReleaseYearError}" />
+                </StackPanel>
+
+
+
+                <StackPanel Margin="30,10,0,0" Orientation="Vertical">
+                    <TextBlock
+                        FontSize="15"
+                        FontWeight="Bold"
+                        Text="Status" />
+
+                    <ComboBox
+                        Width="140"
+                        Margin="0,5,0,0"
+                        FontSize="15"
+                        SelectedValue="{Binding Status}"
+                        SelectedValuePath="Content">
+                        <ComboBoxItem Content="Đang phát hành" />
+                        <ComboBoxItem Content="Ngưng phát hành" Visibility="Collapsed" />
+
+                    </ComboBox>
+                </StackPanel>
+
+
+
+                <StackPanel Margin="30,10,0,0" Orientation="Vertical">
+                    <TextBlock
+                        FontSize="15"
+                        FontWeight="Bold"
+                        Text="Premiere date" />
+                    <DatePicker
+                        x:Name="dpEnd"
+                        Width="120"
+                        Margin="0,5,0,0"
+                        materialDesign:HintAssist.Hint="{Binding HintEndDate}"
+                        materialDesign:HintAssist.HintOpacity="{Binding HintOpacity}"
+                        FontSize="15"
+                        SelectedDate="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock
+                        FontSize="8.5"
+                        Foreground="Red"
+                        Text="{Binding StartDateError}" />
+                </StackPanel>
+
+
+
+                <Border
+                    Width="230"
+                    Height="260"
+                    Margin="30,0,0,40"
+                    BorderThickness="0.5"
+                    CornerRadius="5">
+                    <Border.BorderBrush>
+                        <DrawingBrush
+                            TileMode="Tile"
+                            Viewport="0,0,8,8"
+                            ViewportUnits="Absolute">
+                            <DrawingBrush.Drawing>
+                                <DrawingGroup>
+                                    <GeometryDrawing Brush="Gray">
+                                        <GeometryDrawing.Geometry>
+                                            <GeometryGroup>
+                                                <RectangleGeometry Rect="0,0,50,50" />
+                                                <RectangleGeometry Rect="50,50,50,50" />
+                                            </GeometryGroup>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingGroup>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Border.BorderBrush>
+                    <Image
+                        x:Name="PosterImage"
+                        Source="{Binding ImageSource}"
+                        Stretch="Fill" />
+                </Border>
+
+            </StackPanel>
+
+
+            <StackPanel
+                Grid.Row="4"
+                Grid.Column="1"
+                Margin="15,10,0,0"
+                Orientation="Horizontal">
+
+                <StackPanel Orientation="Vertical">
+
+                    <!--  Trailer  -->
+
+                    <TextBlock
+                        FontSize="15"
+                        FontWeight="Bold"
+                        Text="Trailer" />
+
+                    <TextBox
+                        Width="280"
+                        Margin="0,5,0,0"
+                        HorizontalAlignment="Left"
+                        FontSize="15"
+                        Text="{Binding Trailer, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock
+                        FontSize="8.5"
+                        Foreground="Red"
+                        Text="{Binding TrailerError}" />
+                </StackPanel>
+
+                <StackPanel Margin="30,0,0,0" Orientation="Vertical">
+
+                    <!--  Genre  -->
+
+                    <TextBlock
+                        FontSize="15"
+                        FontWeight="Bold"
+                        Text="Genre" />
+
+                    <TextBox
+                        x:Name="GenreComboBox"
+                        Width="100"
+                        Margin="2,5,0,0"
+                        FontSize="15"
+                        Text="{Binding Genre}" />
+                    <TextBlock
+                        FontSize="8.5"
+                        Foreground="Red"
+                        Text="{Binding GenreError}" />
+                </StackPanel>
+
+            </StackPanel>
+
+
+            <DockPanel Grid.Row="5" Grid.Column="1">
+
+                <!--  Description  -->
+
+                <StackPanel>
+                    <TextBox
+                        Width="420"
+                        Height="158"
+                        Margin="15,15,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        materialDesign:HintAssist.Hint="Movie introduction"
+                        materialDesign:ValidationAssist.Background="White"
+                        AcceptsReturn="True"
+                        BorderBrush="Black"
+                        DockPanel.Dock="Left"
+                        FontSize="15"
+                        FontWeight="Light"
+                        Foreground="Black"
+                        HorizontalScrollBarVisibility="Disabled"
+                        Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                        Text="{Binding Description}"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto" />
+                    <TextBlock
+                        Width="400"
+                        Margin="0,2,0,0"
+                        FontSize="8.5"
+                        Foreground="Red"
+                        Text="{Binding DescriptionError}" />
+                </StackPanel>
+
+
+                <!--  Done Button  -->
+
+                <Button
+                    Width="80"
+                    Margin="0,0,10,10"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Command="{Binding acceptCommand}"
+                    Content="Done"
+                    DockPanel.Dock="Right" IsDefault="True" />
+
+            </DockPanel>
+
+        </Grid>
+    </Border>
+</Window>
