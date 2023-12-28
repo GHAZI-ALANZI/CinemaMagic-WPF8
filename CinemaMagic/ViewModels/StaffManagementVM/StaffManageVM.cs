@@ -1,5 +1,6 @@
 ﻿using CinemaMagic.Models.DataAccessLayer;
 using CinemaMagic.Models.DTOs.StaffManagement;
+using CinemaMagic.Views.StaffManagement;
 using System.Collections.ObjectModel;
 
 namespace CinemaMagic.ViewModels.StaffManagementVM

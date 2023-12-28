@@ -215,7 +215,15 @@
                         CommandParameter="ShowTime"
                         FontWeight="Medium"
                         Foreground="Black"
-                        Style="{StaticResource MaterialDesignFlatButton}">
+                        Style="{StaticResource MaterialDesignFlatButton}" RenderTransformOrigin="0.5,0.5">
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform X="-17"/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
 
                         <StackPanel
                             Margin="-12,0,0,0"
@@ -231,7 +239,16 @@
                                 Margin="9,0,0,0"
                                 VerticalAlignment="Center"
                                 FontSize="15"
-                                FontWeight="SemiBold" Text="Screening Schedule" />
+                                FontWeight="SemiBold" Text="Show Schedule" RenderTransformOrigin="0.5,0.5" >
+                                <TextBlock.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform X="-2"/>
+                                    </TransformGroup>
+                                </TextBlock.RenderTransform>
+                            </TextBlock>
                         </StackPanel>
                     </Button>
 
