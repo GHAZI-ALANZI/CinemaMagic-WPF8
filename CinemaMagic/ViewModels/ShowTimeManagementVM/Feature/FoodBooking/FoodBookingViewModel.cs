@@ -1,7 +1,7 @@
 ﻿using CinemaMagic.Models.DataAccessLayer;
 using CinemaMagic.Models.DTOs.Bills;
 using CinemaMagic.Models.DTOs.ProductManagement;
-using MaterialDesignThemes.Wpf;
+using CinemaMagic.Views.ShowTimeManagement;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 

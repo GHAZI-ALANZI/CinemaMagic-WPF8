@@ -1,5 +1,6 @@
 ﻿using CinemaMagic.Models.DTOs.Bills;
 using CinemaMagic.Models.DTOs.ShowTimeManagement;
+using CinemaMagic.Views.ShowTimeManagement;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 

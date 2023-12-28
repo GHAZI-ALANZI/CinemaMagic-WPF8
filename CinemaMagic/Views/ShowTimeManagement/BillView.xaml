@@ -1,0 +1,861 @@
+﻿<Window x:Class="CinemaMagic.Views.ShowTimeManagement.BillView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CinemaMagic.Views.ShowTimeManagement"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+  
+    Width="1110"
+    Height="600"
+    AllowsTransparency="True"
+    Background="Transparent"
+    FontFamily="Segoe UI"
+    TextElement.FontSize="13"
+    TextElement.FontWeight="Regular"
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+    TextOptions.TextFormattingMode="Ideal"
+    TextOptions.TextRenderingMode="Auto"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Border BorderBrush="Black" BorderThickness="0,0,0,0.5">
+            <Grid>
+
+                <Button
+                    Width="40"
+                    Height="35"
+                    HorizontalAlignment="Left"
+                    Background="Transparent"
+                    Command="{Binding BackCommand}"
+                    Style="{StaticResource MaterialDesignOutlinedDarkButton}">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border>
+                                <materialDesign:PackIcon
+                                    Width="30"
+                                    Height="30"
+                                    Margin="2,0,0,0"
+                                    VerticalAlignment="Center"
+                                    Foreground="Black"
+                                    Kind="ArrowLeft" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Grid Margin="1,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+
+                <materialDesign:Card Margin="0,10,0,5" UniformCornerRadius="6">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Bold"
+                        Text="PAY BILL"
+                        TextAlignment="Center" />
+                </materialDesign:Card>
+
+
+                <materialDesign:Card
+                    Grid.Row="1"
+                    Margin="2,10,2,5"
+                    UniformCornerRadius="6">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="55" />
+                            <RowDefinition Height="55" />
+                            <RowDefinition Height="55" />
+                            <RowDefinition Height="55" />
+                            <RowDefinition Height="55" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+
+                        <Border
+                            BorderBrush="Black"
+                            BorderThickness="0,0,0,1"
+                            CornerRadius="10,10,0,0">
+                            <TextBlock
+                                Margin="20,0,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="25"
+                                FontWeight="Bold"
+                                Text="Customer information" />
+                        </Border>
+
+
+                        <Grid Grid.Row="1" Margin="0,10,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                Margin="3,0,5,10"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                Text="Phone number:" />
+                            <StackPanel Grid.Column="1">
+
+                                <TextBox
+                                    Width="170"
+                                    Height="33"
+                                    Margin="5,0.5,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    VerticalContentAlignment="Center"
+                                    FontSize="18"
+                                    Text="{Binding billDTO.PhoneNumber, UpdateSourceTrigger=PropertyChanged}" />
+                                <TextBlock
+                                    Name="txbPhoneNumberError"
+                                    Margin="10,0,0,0"
+                                    FontSize="8.5"
+                                    Foreground="red"
+                                    Text="{Binding billDTO.PhoneNumberError}" />
+                            </StackPanel>
+                        </Grid>
+
+
+                        <Grid Grid.Row="2" Margin="0,10,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                Margin="3,0,5,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                Text="Full name:" />
+                            <StackPanel Grid.Column="1">
+
+                                <TextBox
+                                    Width="170"
+                                    Height="33"
+                                    Margin="5,0.5,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    VerticalContentAlignment="Center"
+                                    FontSize="18"
+                                    Text="{Binding billDTO.FullName, UpdateSourceTrigger=PropertyChanged}" />
+                                <TextBlock
+                                    Name="txbFullNameError"
+                                    Margin="10,0,0,0"
+                                    FontSize="8.5"
+                                    Foreground="red"
+                                    Text="{Binding billDTO.FullNameError}" />
+                            </StackPanel>
+                        </Grid>
+
+                        <!--  Email  -->
+                        <Grid Grid.Row="3" Margin="0,10,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                Margin="3,0,5,10"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                Text="Email:" />
+                            <StackPanel Grid.Column="1">
+
+                                <TextBox
+                                    Width="170"
+                                    Height="33"
+                                    Margin="5,0.5,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    VerticalContentAlignment="Center"
+                                    FontSize="18"
+                                    Text="{Binding billDTO.Email, UpdateSourceTrigger=PropertyChanged}" />
+                                <TextBlock
+                                    Name="txbEmailError"
+                                    Margin="10,0,0,0"
+                                    FontSize="8.5"
+                                    Foreground="red"
+                                    Text="{Binding billDTO.EmailError}" />
+                            </StackPanel>
+                        </Grid>
+
+                        <!--  Voucher  -->
+                        <Grid Grid.Row="4" Margin="0,10,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                Margin="3,0,5,10"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                Text="Voucher:" />
+                            <StackPanel Grid.Column="1">
+
+                                <ComboBox
+                                    Width="170"
+                                    Height="33"
+                                    Margin="5,1,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    VerticalContentAlignment="Center"
+                                    FontSize="18"
+                                    ItemsSource="{Binding DSVC}"
+                                    SelectedItem="{Binding SelectedVC}" />
+
+
+
+                            </StackPanel>
+                        </Grid>
+
+
+                        <Border
+                            Grid.Row="5"
+                            BorderBrush="Black"
+                            BorderThickness="0,0,0,1"
+                            CornerRadius="10,10,0,0">
+                            <TextBlock
+                                Margin="20,0,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="25"
+                                FontWeight="Bold"
+                                Text="Invoice" />
+                        </Border>
+
+
+
+                        <Grid Grid.Row="6" Margin="0,8,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock
+                                Margin="3,0,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                Text="Total amount:" />
+                            <StackPanel
+                                Grid.Column="1"
+                                Margin="0,0,3,0"
+                                HorizontalAlignment="Right"
+                                Orientation="Horizontal">
+
+
+                                <TextBlock
+                                    Margin="18,0,0,0"
+                                    VerticalAlignment="Center"
+                                    FontSize="18"
+                                    FontWeight="SemiBold"
+                                    Text="" />
+
+
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    FontSize="18"
+                                    FontWeight="SemiBold"
+                                    Text=" $" />
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid Grid.Row="7">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock
+                                Margin="3,0,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                Text="Promotion:" />
+                            <StackPanel Grid.Column="1" VerticalAlignment="Bottom">
+                                <StackPanel
+                                    Margin="0,0,3,0"
+                                    HorizontalAlignment="Right"
+                                    Orientation="Horizontal">
+
+
+                                    <TextBox
+                                        Width="120"
+                                        Height="30"
+                                        Margin="18,0,0,0"
+                                        VerticalAlignment="Center"
+                                        HorizontalContentAlignment="Right"
+                                        FontSize="18"
+                                        FontWeight="SemiBold"
+                                        Text="{Binding ChangeDiscount, UpdateSourceTrigger=PropertyChanged}" />
+
+
+                                    <TextBlock
+                                        VerticalAlignment="Center"
+                                        FontSize="18"
+                                        FontWeight="SemiBold"
+                                        Text=" $" />
+                                </StackPanel>
+
+
+
+                                <TextBlock
+                                    Margin="12,0,0,0"
+                                    FontSize="8.5"
+                                    Foreground="Red"
+                                    Text="" />
+                            </StackPanel>
+
+                        </Grid>
+
+                        <Grid Grid.Row="8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock
+                                Margin="3,0,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                Text="Total payment:" />
+                            <StackPanel
+                                Grid.Column="1"
+                                Margin="0,0,3,0"
+                                HorizontalAlignment="Right"
+                                Orientation="Horizontal">
+
+
+                                <TextBlock
+                                    Margin="18,0,0,0"
+                                    VerticalAlignment="Center"
+                                    FontSize="18"
+                                    FontWeight="SemiBold"
+                                    Text="{Binding billDTO.Total}" />
+
+
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    FontSize="18"
+                                    FontWeight="SemiBold"
+                                    Text=" $" />
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid Grid.Row="9">
+                            <Button
+                                Width="110"
+                                Margin="0,0,5,5"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                materialDesign:ButtonAssist.CornerRadius="2"
+                                Command="{Binding Paycommand}"
+                                Content="Payment" />
+                        </Grid>
+
+
+                    </Grid>
+                </materialDesign:Card>
+
+            </Grid>
+
+
+            <materialDesign:Card
+                Grid.Column="1"
+                Margin="5,10,0,5"
+                UniformCornerRadius="6">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+
+                    <Border
+                        BorderBrush="Black"
+                        BorderThickness="0,0,0,1"
+                        CornerRadius="10,10,0,0">
+                        <TextBlock
+                            Margin="20,0,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="25"
+                            FontWeight="Bold"
+                            Text="Movie" />
+                    </Border>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+
+                        <TextBlock
+                            Width="50"
+                            Margin="3,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            Text="Movie:" />
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="0,0,2,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            FontWeight="SemiBold"
+                            Text="{Binding billDTO.MovieTitle}" />
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+
+                        <TextBlock
+                            Width="50"
+                            Margin="3,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            Text="Show date:" />
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="0,0,2,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            FontWeight="SemiBold"
+                            Text="{Binding billDTO.StartDate}" />
+                    </Grid>
+
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+
+                        <TextBlock
+                            Margin="3,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            Text="Showtime:" />
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="0,0,2,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            FontWeight="SemiBold"
+                            Text="{Binding billDTO.StartAndEndTime}" />
+                    </Grid>
+
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+
+                        <TextBlock
+                            Margin="3,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            Text="Theater:" />
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="0,0,2,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            FontWeight="SemiBold"
+                            Text="CinemaMagic_UIT" />
+                    </Grid>
+
+                    <Grid Grid.Row="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+
+                        <TextBlock
+                            Margin="3,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            Text="Theater:" />
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="0,0,2,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            FontWeight="SemiBold"
+                            Text="{Binding billDTO.NameAuditorium}" />
+                    </Grid>
+
+
+                    <Grid Grid.Row="6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+
+                        <TextBlock
+                            Margin="3,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            Text="Seat:" />
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="0,0,2,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            FontWeight="SemiBold"
+                            Text="{Binding billDTO.Seats}" />
+                    </Grid>
+
+                    <Grid Grid.Row="7">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock
+                            Margin="3,0,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            Text="Ticket price:" />
+                        <StackPanel
+                            Grid.Column="1"
+                            Margin="0,0,3,0"
+                            HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+
+
+                            <TextBlock
+                                Margin="18,0,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                FontWeight="SemiBold"
+                                Text="{Binding billDTO.TicketPrice}" />
+
+
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                FontWeight="SemiBold"
+                                Text=" $" />
+                        </StackPanel>
+                    </Grid>
+
+
+                    <Border
+                        Grid.Row="9"
+                        BorderBrush="Black"
+                        BorderThickness="0,1,0,1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock
+                                Margin="3,0,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                Text="Total:" />
+                            <StackPanel
+                                Grid.Column="1"
+                                Margin="0,0,3,0"
+                                HorizontalAlignment="Right"
+                                Orientation="Horizontal">
+
+
+                                <TextBlock
+                                    Margin="18,0,0,0"
+                                    VerticalAlignment="Center"
+                                    FontSize="18"
+                                    FontWeight="SemiBold"
+                                    Text="{Binding billDTO.TotalPriceTicket}" />
+
+
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    FontSize="18"
+                                    FontWeight="SemiBold"
+                                    Text=" $" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+
+                </Grid>
+
+            </materialDesign:Card>
+
+
+            <materialDesign:Card
+                Grid.Column="2"
+                Margin="5,10,0,5"
+                UniformCornerRadius="6">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="310" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+
+                    <Border
+                        BorderBrush="Black"
+                        BorderThickness="0,0,0,1"
+                        CornerRadius="10,10,0,0">
+                        <TextBlock
+                            Margin="20,0,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="25"
+                            FontWeight="Bold"
+                            Text="Food " />
+                    </Border>
+
+
+                    <Grid Grid.Row="1">
+                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                            <ItemsControl ItemsSource="{Binding billDTO.DSSP}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+
+                                        <Border
+                                            Width="280"
+                                            Height="90"
+                                            Margin="0,3,0,0"
+                                            BorderBrush="Black"
+                                            BorderThickness="0,0,0,0.5">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="170" />
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+
+                                                <StackPanel>
+                                                    <TextBlock
+                                                        Margin="5,0,0,0"
+                                                        FontSize="18"
+                                                        FontWeight="DemiBold"
+                                                        Text="{Binding Name}"
+                                                        TextWrapping="Wrap" />
+                                                    <StackPanel Orientation="Horizontal">
+
+
+                                                        <TextBlock
+                                                            Margin="10,0,0,0"
+                                                            FontSize="18"
+                                                            FontWeight="DemiBold"
+                                                            Text="{Binding Quantity_Choice}" />
+
+
+                                                        <TextBlock
+                                                            Margin="3,0,0,0"
+                                                            FontSize="18"
+                                                            FontWeight="DemiBold"
+                                                            Text="x" />
+
+
+                                                        <TextBlock
+                                                            Margin="3,0,0,0"
+                                                            FontSize="18"
+                                                            FontWeight="DemiBold"
+                                                            Text="{Binding Price}" />
+
+
+                                                        <TextBlock
+                                                            Margin="3,0,0,0"
+                                                            FontSize="18"
+                                                            FontWeight="DemiBold"
+                                                            Text="đ" />
+
+                                                    </StackPanel>
+                                                </StackPanel>
+                                                <StackPanel />
+
+
+                                                <StackPanel
+                                                    Grid.Column="1"
+                                                    Margin="0,0,3,3"
+                                                    HorizontalAlignment="Right"
+                                                    VerticalAlignment="Bottom"
+                                                    Orientation="Horizontal">
+
+
+                                                    <TextBlock
+                                                        Margin="18,0,0,0"
+                                                        VerticalAlignment="Center"
+                                                        FontSize="18"
+                                                        FontWeight="SemiBold"
+                                                        Text="{Binding TotalPrice_QuantityChoice}" />
+
+
+                                                    <TextBlock
+                                                        Margin="0,0,10,0"
+                                                        VerticalAlignment="Center"
+                                                        FontSize="18"
+                                                        FontWeight="SemiBold"
+                                                        Text=" đ" />
+                                                </StackPanel>
+
+                                            </Grid>
+
+                                        </Border>
+
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+
+                        </ScrollViewer>
+
+                    </Grid>
+
+                    <Border
+                        Grid.Row="2"
+                        BorderBrush="Black"
+                        BorderThickness="0,1,0,1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock
+                                Margin="3,0,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                Text="Total:" />
+                            <StackPanel
+                                Grid.Column="1"
+                                Margin="0,0,3,0"
+                                HorizontalAlignment="Right"
+                                Orientation="Horizontal">
+
+
+                                <TextBlock
+                                    Margin="18,0,0,0"
+                                    VerticalAlignment="Center"
+                                    FontSize="18"
+                                    FontWeight="SemiBold"
+                                    Text="{Binding billDTO.TotalPriceProduct}" />
+
+
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    FontSize="18"
+                                    FontWeight="SemiBold"
+                                    Text=" $" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </Grid>
+
+            </materialDesign:Card>
+
+
+            <materialDesign:Card
+                Grid.Column="3"
+                Margin="5,10,0,5"
+                UniformCornerRadius="6">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Border
+                        BorderBrush="Black"
+                        BorderThickness="0,0,0,1"
+                        CornerRadius="10,10,0,0">
+                        <TextBlock
+                            Margin="20,0,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="25"
+                            FontWeight="Bold"
+                            Text="Note" />
+                    </Border>
+                    <TextBox
+                        Grid.Row="1"
+                        Width="204"
+                        Height="300"
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        materialDesign:HintAssist.Hint="Note"
+                        AcceptsReturn="True"
+                        BorderBrush="Black"
+                        DockPanel.Dock="Left"
+                        FontSize="18"
+                        FontWeight="Light"
+                        Foreground="Black"
+                        HorizontalScrollBarVisibility="Disabled"
+                        Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                        Text="{Binding billDTO.Note, UpdateSourceTrigger=PropertyChanged}"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto" />
+                </Grid>
+            </materialDesign:Card>
+
+        </Grid>
+
+
+
+    </Grid>
+</Window>
