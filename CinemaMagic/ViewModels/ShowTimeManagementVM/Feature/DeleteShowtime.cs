@@ -1,5 +1,6 @@
 ﻿using CinemaMagic.Models.DataAccessLayer;
 using CinemaMagic.Models.DTOs.ShowTimeManagement;
+using CinemaMagic.Views.MessageBox;
 using System.Windows.Input;
 
 namespace CinemaMagic.ViewModels.ShowTimeManagementVM

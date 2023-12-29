@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using CinemaMagic.Views;
+using System.Windows;
 
 namespace CinemaMagic
 {

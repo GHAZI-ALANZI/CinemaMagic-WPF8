@@ -1,4 +1,5 @@
 ﻿using CinemaMagic.Models.DTOs;
+using CinemaMagic.ViewModels;
 using Microsoft.Data.SqlClient;
 using System.Collections.ObjectModel;
 using System.Data;

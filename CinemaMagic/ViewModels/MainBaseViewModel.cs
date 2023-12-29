@@ -1,3 +1,11 @@
+using CinemaMagic.Views.CustomerManagement;
+using CinemaMagic.Views.ErrorManagement;
+using CinemaMagic.Views.InformationManagement;
+using CinemaMagic.Views.MovieManagement;
+using CinemaMagic.Views.ProductManagement;
+using CinemaMagic.Views.ShowTimeManagement;
+using CinemaMagic.Views.StaffManagement;
+using CinemaMagic.Views.VoucherManagement;
 using System.Windows.Input;
 
 namespace CinemaMagic.ViewModels

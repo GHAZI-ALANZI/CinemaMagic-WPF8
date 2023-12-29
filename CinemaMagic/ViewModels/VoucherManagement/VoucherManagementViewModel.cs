@@ -1,5 +1,6 @@
 ﻿using CinemaMagic.Models.DataAccessLayer;
 using CinemaMagic.Models.DTOs;
+using CinemaMagic.Views.VoucherManagement;
 using System.Collections.ObjectModel;
 
 namespace CinemaMagic.ViewModels.VoucherManagement

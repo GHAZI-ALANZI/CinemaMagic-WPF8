@@ -1,4 +1,5 @@
 ﻿using CinemaMagic.Models.DTOs;
+using CinemaMagic.Views.VoucherManagement;
 using System.Windows.Input;
 
 namespace CinemaMagic.ViewModels.VoucherManagement

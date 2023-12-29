@@ -1,4 +1,5 @@
 ﻿using CinemaMagic.Models.DTOs;
+using CinemaMagic.Views.MovieManagement;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 

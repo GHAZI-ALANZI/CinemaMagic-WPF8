@@ -1,5 +1,6 @@
 ﻿using CinemaMagic.Models.DataAccessLayer;
 using CinemaMagic.Models.DTOs;
+using CinemaMagic.Views.MessageBox;
 using System.Net.Mail;
 using System.Windows.Input;
 

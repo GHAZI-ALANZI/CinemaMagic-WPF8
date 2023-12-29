@@ -1,4 +1,5 @@
 ﻿using CinemaMagic.Models.DataAccessLayer;
+using CinemaMagic.Views.MessageBox;
 using System.IO;
 using System.Windows.Input;
 using OpenFileDialog = Microsoft.Win32.OpenFileDialog;

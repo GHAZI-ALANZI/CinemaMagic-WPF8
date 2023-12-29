@@ -1,5 +1,7 @@
 ﻿using CinemaMagic.Models.DataAccessLayer;
 using CinemaMagic.Models.DTOs;
+using CinemaMagic.Views.ErrorManagement;
+using CinemaMagic.Views.MessageBox;
 using Microsoft.Win32;
 using System.Collections.ObjectModel;
 using System.Windows;

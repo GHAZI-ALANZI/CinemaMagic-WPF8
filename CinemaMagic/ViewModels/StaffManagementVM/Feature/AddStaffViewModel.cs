@@ -1,8 +1,8 @@
 ﻿using CinemaMagic.Models.DataAccessLayer;
 using CinemaMagic.Models.DTOs;
 using CinemaMagic.Models.DTOs.StaffManagement;
+using CinemaMagic.Views.MessageBox;
 using CinemaMagic.Views.StaffManagement;
-using MaterialDesignThemes.Wpf;
 using System.Windows.Input;
 
 namespace CinemaMagic.ViewModels.StaffManagementVM

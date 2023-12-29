@@ -1,6 +1,7 @@
 ﻿using CinemaMagic.Models.DataAccessLayer;
 using CinemaMagic.Models.DTOs;
-using MaterialDesignThemes.Wpf;
+using CinemaMagic.Views.MessageBox;
+using CinemaMagic.Views.VoucherManagement;
 using System.Windows.Input;
 
 namespace CinemaMagic.ViewModels.VoucherManagement

@@ -1,5 +1,6 @@
 ﻿using CinemaMagic.Models.DataAccessLayer;
 using CinemaMagic.Models.DTOs.StaffManagement;
+using CinemaMagic.Views.MessageBox;
 using System.Windows;
 using System.Windows.Input;
 
