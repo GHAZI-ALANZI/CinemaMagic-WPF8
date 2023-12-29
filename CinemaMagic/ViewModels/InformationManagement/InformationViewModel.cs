@@ -1,5 +1,6 @@
 ﻿using CinemaMagic.Models.DataAccessLayer;
 using CinemaMagic.Models.DTOs.StaffManagement;
+using CinemaMagic.Views.InformationManagement;
 using System.Windows.Media.Imaging;
 
 namespace CinemaMagic.ViewModels.InformationManagement
