@@ -1,5 +1,7 @@
 ﻿using CinemaMagic.Models.DataAccessLayer;
 using CinemaMagic.Models.DTOs.ProductManagement;
+using CinemaMagic.Views.MessageBox;
+using CinemaMagic.Views.ProductManagement;
 using Microsoft.Win32;
 using System.ComponentModel;
 using System.IO;

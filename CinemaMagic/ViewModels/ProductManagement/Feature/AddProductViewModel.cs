@@ -1,6 +1,7 @@
 ﻿using CinemaMagic.Models.DataAccessLayer;
 using CinemaMagic.Models.DTOs.ProductManagement;
-using MaterialDesignThemes.Wpf;
+using CinemaMagic.Views.MessageBox;
+using CinemaMagic.Views.ProductManagement;
 using Microsoft.Win32;
 using System.IO;
 using System.Windows.Input;
