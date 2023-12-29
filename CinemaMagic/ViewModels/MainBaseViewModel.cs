@@ -5,6 +5,7 @@ using CinemaMagic.Views.MovieManagement;
 using CinemaMagic.Views.ProductManagement;
 using CinemaMagic.Views.ShowTimeManagement;
 using CinemaMagic.Views.StaffManagement;
+using CinemaMagic.Views.Statistics;
 using CinemaMagic.Views.VoucherManagement;
 using System.Windows.Input;
 

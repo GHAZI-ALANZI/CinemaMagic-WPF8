@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="CinemaMagic.Views.Statistics.StatisticsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CinemaMagic.Views.Statistics"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d" 
+             x:Name="mainUC"
+             d:DesignHeight="648"
+             d:DesignWidth="1000"
+             FontFamily="Segoe UI"
+             >
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+                        Storyboard.TargetName="mainUC"
+                        Storyboard.TargetProperty="Opacity"
+                        From="0"
+                        To="1"
+                        Duration="0:0:0.3" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </UserControl.Triggers>
+
+
+
+    <Grid Background="#f5f5f5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0"
+                BorderBrush="#3f2305"
+                BorderThickness="0.5"
+                Width="385"
+                CornerRadius="0,0,5,5"
+                >
+            <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+                <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonTop}"
+                             BorderBrush="#3f2305"
+                             IsChecked="True"
+                             Content="Overall"
+                             Command="{Binding SwitchViewStatisticsCommand}"
+                             CommandParameter="Overall"/>
+                <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonTop}"
+                             BorderBrush="#3f2305"
+                             Content="Customers"
+                             Command="{Binding SwitchViewStatisticsCommand}"
+                             CommandParameter="Customer"/>
+                <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonTop}"
+                             BorderBrush="#3f2305"
+                             Content="Movies"
+                             Command="{Binding SwitchViewStatisticsCommand}"
+                             CommandParameter="Movie"/>
+                <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonTop}"
+                             BorderBrush="#3f2305"
+                             Content="Products"
+                             Command="{Binding SwitchViewStatisticsCommand}"
+                             CommandParameter="Product"/>
+            </StackPanel>
+        </Border>
+
+        <!--  Display current view  -->
+        <ContentControl
+                Grid.Row="1"
+                Content="{Binding CurrentStatisticsView}" />
+
+    </Grid>
+</UserControl>

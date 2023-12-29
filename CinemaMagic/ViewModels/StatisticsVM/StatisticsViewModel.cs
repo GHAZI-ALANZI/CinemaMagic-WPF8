@@ -2,6 +2,7 @@
 using CinemaMagic.Models.DataAccessLayer.Bills;
 using CinemaMagic.Models.DTOs;
 using CinemaMagic.Models.DTOs.ProductManagement;
+using CinemaMagic.Views.Statistics;
 using LiveChartsCore;
 using LiveChartsCore.Defaults;
 using LiveChartsCore.SkiaSharpView;
