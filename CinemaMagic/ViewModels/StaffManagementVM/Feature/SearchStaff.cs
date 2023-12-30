@@ -36,11 +36,11 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
 
         void SearchStaff()
         {
-            FilterDSNV = new ObservableCollection<StaffDTO>(DSNV);//Initially no filtering is needed
+            FilterDSNV = new ObservableCollection<StaffDTO>(DSNV);
         }
         private void FilterStaffList()
         {
-            // Update FilteredStaffList based on SearchText
+
             if (string.IsNullOrWhiteSpace(SearchText))
             {
                 FilterDSNV = new ObservableCollection<StaffDTO>(DSNV);

@@ -46,7 +46,7 @@
                     Background="Transparent"
                     BorderThickness="0"
                     Command="{Binding AuditoriumCommand}"
-                    Content="Entire"
+                    Content="All"
                     Foreground="Black"
                     Style="{StaticResource MaterialDesignOutlinedDarkButton}" />
 

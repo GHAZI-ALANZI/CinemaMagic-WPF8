@@ -30,10 +30,10 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
                         return;
                     else
                     {
-                        // userDA.deleteAccount(staff);/ Because of the foreign key reference constraint // Use trigger
+
                         staffDA.deleteStaff(staff);
                         mb.Close();
-                        YesMessageBox msb = new YesMessageBox("Notification", "Delete successful");
+                        YesMessageBox msb = new YesMessageBox("Notification", "Successfully deleted");
                         msb.ShowDialog();
                         msb.Close();
                     }

@@ -86,9 +86,9 @@ namespace CinemaMagic.Models.DataAccessLayer
 
         public System.Windows.Media.Brush ConvertStatusToBrush(string status)
         {
-            if (status == "Đang xử lý") return new SolidColorBrush(System.Windows.Media.Colors.DarkOrange);
-            if (status == "Đã xử lý") return new SolidColorBrush(System.Windows.Media.Colors.DarkGreen);
-            if (status == "Đã huỷ") return new SolidColorBrush(System.Windows.Media.Colors.DarkGray);
+            if (status == "Progressing") return new SolidColorBrush(System.Windows.Media.Colors.DarkOrange);
+            if (status == "Processed") return new SolidColorBrush(System.Windows.Media.Colors.DarkGreen);
+            if (status == "Cancelled") return new SolidColorBrush(System.Windows.Media.Colors.DarkGray);
             return new SolidColorBrush(System.Windows.Media.Colors.DarkRed);
         }
 
@@ -106,7 +106,7 @@ namespace CinemaMagic.Models.DataAccessLayer
                     connection.Open();
                     command.Connection = connection;
                     command.CommandText = "UPDATE [ERRORS] SET STATUS=@status, ENDDATE=@enddate, COST=@cost WHERE ID=@id";
-                    command.Parameters.AddWithValue("@status", "Đã xử lý");
+                    command.Parameters.AddWithValue("@status", "Processed");
                     command.Parameters.AddWithValue("@cost", costValue);
                     command.Parameters.AddWithValue("@enddate", endDate);
                     command.Parameters.AddWithValue("@id", idValue);
@@ -127,9 +127,9 @@ namespace CinemaMagic.Models.DataAccessLayer
                     connection.Open();
                     command.Connection = connection;
                     command.CommandText = "UPDATE [ERRORS] SET STATUS=@status, COST=0, ENDDATE=GETDATE() WHERE id=@id";
-                    string status = "Chờ tiếp nhận";
-                    if (comboBoxStatusIndex == 1) status = "Đang xử lý";
-                    if (comboBoxStatusIndex == 3) status = "Đã huỷ";
+                    string status = "Pending receipt";
+                    if (comboBoxStatusIndex == 1) status = "Progressing";
+                    if (comboBoxStatusIndex == 3) status = "Cancelled";
                     command.Parameters.Add("@status", SqlDbType.NVarChar).Value = status;
                     command.Parameters.Add("@id", SqlDbType.Int).Value = iD;
                     var rows = command.ExecuteNonQuery();

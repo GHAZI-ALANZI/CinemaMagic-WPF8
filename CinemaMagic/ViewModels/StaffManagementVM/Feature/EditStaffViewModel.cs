@@ -28,11 +28,11 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
 
     public class EditStaffViewModel : MainBaseViewModel
     {
-        private StaffEditView wd;//Serve the cancel button
-        public ICommand quitCommand { get; set; }// Cancel editing
-        public ICommand acceptCommand { get; set; }// Edit confirmation
+        private StaffEditView wd;
+        public ICommand quitCommand { get; set; }
+        public ICommand acceptCommand { get; set; }
 
-        public StaffDTO staffDTO { get; set; }// Serve to display current staff when clicking on edit
+        public StaffDTO staffDTO { get; set; }
 
         public EditStaffViewModel(StaffEditView wd)
         {
@@ -81,7 +81,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
             }
         }
 
-        // Full name
+
         private string fullName;
         public string FullName
         {
@@ -104,10 +104,10 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
             }
         }
 
-        // Gender
+
         public string Gender { get; set; }
 
-        // Date of birth (ensure the date is not greater than the current date)
+
         private DateTime? birth;
         public DateTime? Birth
         {
@@ -177,7 +177,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
         public string Role { get; set; }
 
 
-        // Start date
+
         private DateTime? ngayVL;
         public DateTime? NgayVL
         {
@@ -200,7 +200,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
             }
         }
 
-        // Salary
+
         private string salary;
         public string Salary
         {
@@ -222,7 +222,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
             }
         }
 
-        private bool[] _canAccept = new bool[6];// Serve for edit confirmation
+        private bool[] _canAccept = new bool[6];
         private bool canAccept(object obj)
         {
             return _canAccept[0] && _canAccept[1] && _canAccept[2] && _canAccept[3] && _canAccept[4] && _canAccept[5];
@@ -234,7 +234,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
         {
             if (string.IsNullOrWhiteSpace(FullName))
             {
-                FullNameError = "First and last name cannot be empty!";
+                FullNameError = "Full name cannot be empty!";
                 _canAccept[0] = false;
             }
             else
@@ -247,7 +247,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
         {
             if (Birth > DateTime.UtcNow)
             {
-                BirthError = "Date of birth is invalid!";
+                BirthError = "Invalid date of birth!";
                 _canAccept[1] = false;
             }
             else
@@ -298,7 +298,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
         {
             if (NgayVL < Birth)
             {
-                NgayVLError = "Start date must be after the date of birth!";
+                NgayVLError = "The start date must be after the date of birth!";
                 _canAccept[4] = false;
             }
             else
@@ -322,7 +322,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
             }
             else if (int.Parse(Salary) < 0)
             {
-                SalaryError = "Salary is invalid!";
+                SalaryError = "Invalid salary!";
                 _canAccept[5] = false;
 
             }

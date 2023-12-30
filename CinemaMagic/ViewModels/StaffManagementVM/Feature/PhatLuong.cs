@@ -16,7 +16,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
         private void PhatLuong(object obj)
         {
             string[] s = DateTime.Today.ToString("yyyy-MM-dd").Split('-');
-            YesNoMessageBox wd = new YesNoMessageBox("Notification", "Do you want to distribute salaries to employees?");
+            YesNoMessageBox wd = new YesNoMessageBox("Notification", "Do you want to pay salary to employees?");
             wd.ShowDialog();
             if (wd.DialogResult == false)
             {
@@ -27,7 +27,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
                 if (s[2] != "20")
                 {
                     wd.Close();
-                    YesMessageBox mb = new YesMessageBox("Notification", "Today is not salary day!");
+                    YesMessageBox mb = new YesMessageBox("Notification", "Today is not a payday!");
                     mb.ShowDialog();
                     mb.Close();
                     return;
@@ -35,7 +35,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
                 if (MotSoPTBoTro.checkSalary())
                 {
                     wd.Close();
-                    YesMessageBox mb = new YesMessageBox("Notification", "This month's salary has already been paid!");
+                    YesMessageBox mb = new YesMessageBox("Notification", "Salary has already been paid this month!");
                     mb.ShowDialog();
                     mb.Close();
                     return;
@@ -44,7 +44,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
                 StaffSalaryDA staffSalaryDA = new StaffSalaryDA();
                 staffSalaryDA.PhatLuongAll();
                 wd.Close();
-                YesMessageBox mb2 = new YesMessageBox("Notification", "Successful salary distribution!");
+                YesMessageBox mb2 = new YesMessageBox("Notification", "Salary successfully paid!");
                 mb2.ShowDialog();
                 mb2.Close();
             }

@@ -423,7 +423,7 @@ namespace CinemaMagic.Models.DataAccessLayer
                         {
                             reader.Read();
                             string role = reader.GetString(reader.GetOrdinal("Role"));
-                            if (role == "Quản lý")
+                            if (role == "Manager")
                             {
                                 return true;
                             }

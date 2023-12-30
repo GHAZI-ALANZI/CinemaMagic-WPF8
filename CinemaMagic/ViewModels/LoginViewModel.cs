@@ -65,7 +65,7 @@ namespace CinemaMagic.ViewModels
             bool check = false;
             foreach (UserDTO user in getAccounts)
             {
-                if (user.Username == Username && user.Password == wd.txtPassword.Password)
+                if (user.Username == Username && user.Password == PTChung.EncryptMD5(wd.txtPassword.Password))
                 {
                     check = true;
                     MainView mainView = new MainView(user.Staff_Id, wd);

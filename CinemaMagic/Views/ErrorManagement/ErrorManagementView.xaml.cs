@@ -23,7 +23,7 @@ namespace CinemaMagic.Views.ErrorManagement
         {
             ErrorDTO error = item as ErrorDTO;
             string filter = (cbBoxFilter.SelectedItem as ComboBoxItem).Content.ToString();
-            if (filter == "Entire") return true;
+            if (filter == "All") return true;
             if (filter == "Pending receipt")
             {
                 return error.Status == "Pending receipt";

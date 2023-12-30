@@ -9,7 +9,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
     public partial class StaffManageVM
     {
 
-        //Handle export success notification
+
         private string notify;
         public string Notify
         {
@@ -29,7 +29,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
         private void ExportExcel(object obj)
         {
 
-            //select folder to save export file
+
             string Path = "";
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
             dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
@@ -40,7 +40,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
             }
 
 
-            string fileExcelName = "";//export filename
+            string fileExcelName = "";
             string pathFile = "";
 
             while (true)
@@ -55,18 +55,16 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
 
 
 
-            //prepare export
 
-            // create corresponding datatable
             DataTable table = new DataTable();
             table.Columns.Add("ID", typeof(string));
-            table.Columns.Add("Họ và tên", typeof(string));
-            table.Columns.Add("Ngày sinh", typeof(string));
-            table.Columns.Add("Giới tính", typeof(string));
-            table.Columns.Add("SĐT", typeof(string));
+            table.Columns.Add("FullName", typeof(string));
+            table.Columns.Add("Birth", typeof(string));
+            table.Columns.Add("Gender", typeof(string));
+            table.Columns.Add("PhoneNumber", typeof(string));
             table.Columns.Add("Email", typeof(string));
-            table.Columns.Add("Chức vụ", typeof(string));
-            table.Columns.Add("Lương", typeof(int));
+            table.Columns.Add("Role", typeof(string));
+            table.Columns.Add("Salary", typeof(int));
 
 
 
@@ -76,7 +74,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
             }
 
 
-            //proceed with export
+
             Task.Run(async () =>
             {
                 try
@@ -92,7 +90,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
 
                         File.WriteAllBytes(pathFile, package.GetAsByteArray());
                     }
-                    Notify = "Exporting DSNV to Excel file successful!";
+                    Notify = "Successfully exported employees to Excel file!";
                 }
                 catch
                 {

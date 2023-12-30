@@ -51,12 +51,12 @@ namespace CinemaMagic.ViewModels.CustomerManagement
             }
             else
             {
-                if (cboLuaChonTimKiem == "Tên khách hàng")
+                if (cboLuaChonTimKiem == "Customer name")
                 {
                     FilterDSCTM = new ObservableCollection<CustomerDTO>(
                         DSCTM.Where(s => s.FullName.ToLower().Contains(SearchText.ToLower())));
                 }
-                else if (cboLuaChonTimKiem == "Số điện thoại")
+                else if (cboLuaChonTimKiem == "Phone number")
                 {
                     FilterDSCTM = new ObservableCollection<CustomerDTO>(
                         DSCTM.Where(s => s.PhoneNumber.ToLower().Contains(SearchText.ToLower())));

@@ -56,9 +56,9 @@
                         FontSize="15"
                         Foreground="Black"
                         Style="{StaticResource MaterialDesignFilledComboBox}">
-                    <ComboBoxItem IsSelected="True" Content="Entire" />
+                    <ComboBoxItem IsSelected="True" Content="All" />
                     <ComboBoxItem Content="Pending receipt" />
-                    <ComboBoxItem Content="In progress" />
+                    <ComboBoxItem Content="Progressing" />
                     <ComboBoxItem Content="Processed" />
                     <ComboBoxItem Content="Cancelled" />
                 </ComboBox>

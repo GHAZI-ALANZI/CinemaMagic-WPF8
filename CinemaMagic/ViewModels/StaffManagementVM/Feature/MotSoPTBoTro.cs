@@ -5,7 +5,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
     public class MotSoPTBoTro
     {
 
-        //method for generating random export file names
+
         public static string RandomFileName()
         {
             Random random = new Random();
@@ -21,7 +21,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
         }
 
 
-        //Serves ValidateUsername in add staff
+
         public static bool uniqueUsername(string username)
         {
             UserDA userDA = new UserDA();
@@ -38,7 +38,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
 
 
 
-        //method to check whether employees have been paid this month or not
+
         public static bool checkSalary()
         {
             StaffSalaryDA staffSalaryDA = new StaffSalaryDA();

@@ -246,7 +246,7 @@
                     HorizontalAlignment="Left"
                     Command="{Binding addImageCommand}">
                     <Button.Background>
-                        <ImageBrush ImageSource="pack://application:,,,/Icon/Open.png" />
+                        <ImageBrush ImageSource="/Views/ProductManagement/Open.png" />
                     </Button.Background>
                 </Button>
             </Grid>

@@ -20,7 +20,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
             StaffAddView staffAddView = new StaffAddView();
             staffAddView.ShowDialog();
 
-            //load  data
+            //load data
             loadData();
         }
     }
@@ -28,12 +28,12 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
     public class AddStaffViewModel : MainBaseViewModel
     {
 
-        private StaffAddView wd;//serve quit and add
+        private StaffAddView wd;
 
 
-        // Add for the table Staff
 
-        // First and last name
+
+
         private string fullName;
         public string FullName
         {
@@ -58,12 +58,12 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
 
 
 
-        // Gender
+
         public string Gender { get; set; }
 
 
 
-        // Date of birth (validate to ensure the date is before the current date)
+
         private DateTime? birth;
         public DateTime? Birth
         {
@@ -114,7 +114,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
 
 
 
-        // Phone number
+
         private string phoneNumber;
         public string PhoneNumber
         {
@@ -140,13 +140,13 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
 
 
 
-        // Position
+
 
         public string Role { get; set; }
 
 
 
-        // Start date
+
         private DateTime? ngayVL;
         public DateTime? NgayVL
         {
@@ -173,7 +173,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
 
 
 
-        // Salary
+
         private string salary;
         public string Salary
         {
@@ -197,9 +197,8 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
 
 
 
-        //add account table"
 
-        //account name
+
         private string username;
         public string Username
         {
@@ -225,7 +224,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
 
 
 
-        //password entry error
+
         private string password1Error;
         public string Password1Error
         {
@@ -237,7 +236,8 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
             }
         }
 
-        //password re-entry error
+
+
         private string password2Error;
         public string Password2Error
         {
@@ -251,10 +251,11 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
 
 
 
-        private bool[] _canAccept = new bool[7];//serve the purpose of allowing button accept k press
+        private bool[] _canAccept = new bool[7];
 
         public ICommand CancelCommand { get; set; }
-        public ICommand acceptAddCommand { get; set; }//agree to add
+        public ICommand acceptAddCommand { get; set; }
+
 
         public AddStaffViewModel(StaffAddView wd)
         {
@@ -262,8 +263,8 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
             CancelCommand = new ViewModelCommand(cancel);
             acceptAddCommand = new ViewModelCommand(acceptAdd, canAcceptAdd);
 
-            Gender = "Nam";
-            Role = "Quản lý";
+            Gender = "Male";
+            Role = "Manager";
             Birth = DateTime.UtcNow;
             NgayVL = DateTime.UtcNow;
         }
@@ -272,7 +273,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
             wd.Close();
         }
 
-        //agree to add
+
         private void acceptAdd(object obj)
         {
 
@@ -283,7 +284,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
             if (!ValidatePassword2()) { return; }
 
 
-            //add vào bảng Staff
+
             StaffDA staffDA = new StaffDA();
             staffDA.addStaff(new StaffDTO(FullName, Birth.Value.ToString("yyyy-MM-dd"), Gender, Email, PhoneNumber, int.Parse(Salary), Role, NgayVL.Value.ToString("yyyy-MM-dd")));
 
@@ -291,7 +292,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
             UserDA userDA = new UserDA();
             userDA.addAccount(new UserDTO(Username, PTChung.EncryptMD5(wd.txtMatKhau.Password), staffDA.identCurrent()));
 
-            YesMessageBox mb = new YesMessageBox("Notification", "Employee added successfully");
+            YesMessageBox mb = new YesMessageBox("Notification", "Employee successfully added");
             mb.ShowDialog();
             wd.Close();
 
@@ -307,7 +308,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
             return true;
         }
 
-        //Validate
+        //Các hàm Validate
         private void ValidateFullName()
         {
             if (string.IsNullOrWhiteSpace(FullName))
@@ -327,7 +328,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
         {
             if (Birth > DateTime.UtcNow)
             {
-                BirthError = "Date of birth is invalid!";
+                BirthError = "Invalid date of birth!";
                 _canAccept[1] = false;
             }
             else
@@ -346,7 +347,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
             }
             else if (!Email.Contains("@"))
             {
-                EmailError = "Email is invalid!";
+                EmailError = "Invalid email!";
                 _canAccept[2] = false;
             }
             else
@@ -365,7 +366,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
             }
             else if (!PhoneNumber.All(char.IsDigit))
             {
-                PhoneNumberError = "The phone number can only contain digits";
+                PhoneNumberError = "Phone number can only contain digits!";
                 _canAccept[3] = false;
             }
             else
@@ -380,7 +381,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
         {
             if (NgayVL < Birth)
             {
-                NgayVLError = "Inception date must be greater than the date of birth!";
+                NgayVLError = "The start date must be later than the date of birth!";
                 _canAccept[4] = false;
             }
             else
@@ -400,12 +401,12 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
             }
             else if (!Salary.All(char.IsDigit))
             {
-                SalaryError = "Salary is invalid!";
+                SalaryError = "Invalid salary!";
                 _canAccept[5] = false;
             }
             else if (int.Parse(Salary) < 0)
             {
-                SalaryError = "Salary is invalid!";
+                SalaryError = "Invalid salary!";
                 _canAccept[5] = false;
             }
             else
@@ -430,12 +431,12 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
             }
             else if (Username.Length < 6)
             {
-                UsernameError = "Username must be greater than 6 characters!";
+                UsernameError = "Username must be longer than 6 characters!";
                 _canAccept[6] = false;
             }
             else if (!MotSoPTBoTro.uniqueUsername(Username))
             {
-                UsernameError = "The username already exists!";
+                UsernameError = "Username already exists!";
                 _canAccept[6] = false;
             }
             else
@@ -451,17 +452,17 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
         {
             if (wd.txtMatKhau.Password.Length < 5)
             {
-                Password1Error = "The password must be greater than 5 characters!";
+                Password1Error = "Password must be longer than 5 characters!";
                 return false;
             }
             else if (wd.txtMatKhau.Password.Contains(" "))
             {
-                Password1Error = "The password cannot contain spaces!";
+                Password1Error = "Password cannot contain spaces!";
                 return false;
             }
             else if (PTChung.ContainsUnicodeCharacter(wd.txtMatKhau.Password))
             {
-                Password1Error = "The password cannot contain accents!";
+                Password1Error = "Password cannot contain special characters!";
                 return false;
             }
             else
@@ -475,7 +476,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
         {
             if (wd.txtMatKhau.Password != wd.txtNhapLaiMatKhau.Password)
             {
-                Password2Error = "The passwords do not match, please re-enter!";
+                Password2Error = "Passwords do not match, please try again!";
                 return false;
             }
             else

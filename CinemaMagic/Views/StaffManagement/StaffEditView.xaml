@@ -113,8 +113,8 @@
                         FontSize="15"
                         SelectedValue="{Binding Gender}"
                         SelectedValuePath="Content">
-                        <ComboBoxItem Content="Nam" />
-                        <ComboBoxItem Content="Nữ" />
+                        <ComboBoxItem Content="Male" />
+                        <ComboBoxItem Content="Female" />
                     </ComboBox>
 
                     <TextBlock
@@ -238,7 +238,7 @@
                     HorizontalAlignment="Right"
                     VerticalAlignment="Center"
                     FontSize="15"
-                    Text="Job Title" />
+                    Text="Role" />
                 <StackPanel Grid.Column="1">
                     <ComboBox
                         x:Name="cbChucVu"
@@ -252,8 +252,8 @@
                         FontSize="15"
                         SelectedValue="{Binding Role}"
                         SelectedValuePath="Content">
-                        <ComboBoxItem Content="Quản lý" />
-                        <ComboBoxItem Content="Nhân viên" />
+                        <ComboBoxItem Content="Manager" />
+                        <ComboBoxItem Content="Employee" />
                     </ComboBox>
                     <TextBlock
                         Margin="10,0,0,0"

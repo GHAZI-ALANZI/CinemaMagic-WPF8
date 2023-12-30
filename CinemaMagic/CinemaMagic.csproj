@@ -16,8 +16,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Images\InformationManagement\Default.jpg" />
+    <None Remove="Images\MessageBox\logo2.png" />
+    <None Remove="Images\StaffManagement\Default.jpg" />
     <None Remove="Views\background.jpg" />
     <None Remove="Views\logout.png" />
+    <None Remove="Views\ProductManagement\DauCong.png" />
+    <None Remove="Views\ProductManagement\delete.png" />
+    <None Remove="Views\ProductManagement\money.png" />
+    <None Remove="Views\ProductManagement\Open.png" />
+    <None Remove="Views\ProductManagement\pen.png" />
     <None Remove="Views\QLProduct.png" />
   </ItemGroup>
 
@@ -34,8 +42,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\InformationManagement\Default.jpg" />
+    <Resource Include="Images\MessageBox\logo2.png" />
+    <Resource Include="Images\StaffManagement\Default.jpg" />
     <Resource Include="Views\background.jpg" />
     <Resource Include="Views\logout.png" />
+    <Resource Include="Views\ProductManagement\DauCong.png" />
+    <Resource Include="Views\ProductManagement\delete.png" />
+    <Resource Include="Views\ProductManagement\money.png" />
+    <Resource Include="Views\ProductManagement\Open.png" />
+    <Resource Include="Views\ProductManagement\pen.png" />
     <Resource Include="Views\QLProduct.png" />
   </ItemGroup>
 

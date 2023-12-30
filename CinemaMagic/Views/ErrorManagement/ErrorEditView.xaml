@@ -234,7 +234,7 @@
                                 SelectionChanged="ComboBox_SelectionChanged"
                                 SelectedIndex="{Binding ComboBoxStatusIndex}">
                             <ComboBoxItem Content="Pending receipt" />
-                            <ComboBoxItem Content="In progress" />
+                            <ComboBoxItem Content="Progressing" />
                             <ComboBoxItem Content="Processed" />
                             <ComboBoxItem Content="Cancelled" />
                         </ComboBox>

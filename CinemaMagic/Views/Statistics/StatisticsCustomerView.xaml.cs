@@ -24,12 +24,12 @@ namespace CinemaMagic.Views.Statistics
             ComboBoxItem s = (ComboBoxItem)cbBoxChuKy.SelectedItem;
             switch (s.Content.ToString())
             {
-                case "Theo năm":
+                case "By year":
                     {
                         GetYearSource(cbBoxThoiDiem);
                         return;
                     }
-                case "Theo tháng":
+                case "By month":
                     {
                         GetMonthSource(cbBoxThoiDiem);
                         return;
@@ -74,5 +74,7 @@ namespace CinemaMagic.Views.Statistics
             cbb.ItemsSource = l;
             cbb.SelectedIndex = DateTime.Today.Month - 1;
         }
+
+
     }
 }

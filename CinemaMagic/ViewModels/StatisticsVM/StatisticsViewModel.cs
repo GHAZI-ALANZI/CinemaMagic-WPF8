@@ -234,10 +234,7 @@ namespace CinemaMagic.ViewModels.StatisticsVM
                 salaryCostByYear = taskSalary.Result;
                 sum_outcome = addProductCostByYear + errorCostByYear + movieCostByYear + salaryCostByYear;
             }
-            catch (Exception ex)
-            {
 
-            }
             finally
             {
                 IncomeText = sum_income.ToString("N0");
