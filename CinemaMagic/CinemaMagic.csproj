@@ -20,7 +20,12 @@
     <None Remove="Images\MessageBox\logo2.png" />
     <None Remove="Images\StaffManagement\Default.jpg" />
     <None Remove="Views\background.jpg" />
+    <None Remove="Views\backgroundcinema.jpg" />
+    <None Remove="Views\cinemabackground.jpg" />
+    <None Remove="Views\filmlogo.png" />
+    <None Remove="Views\logo.png" />
     <None Remove="Views\logout.png" />
+    <None Remove="Views\Password\backgroundcinema.jpg" />
     <None Remove="Views\ProductManagement\DauCong.png" />
     <None Remove="Views\ProductManagement\delete.png" />
     <None Remove="Views\ProductManagement\money.png" />
@@ -46,7 +51,12 @@
     <Resource Include="Images\MessageBox\logo2.png" />
     <Resource Include="Images\StaffManagement\Default.jpg" />
     <Resource Include="Views\background.jpg" />
+    <Resource Include="Views\backgroundcinema.jpg" />
+    <Resource Include="Views\cinemabackground.jpg" />
+    <Resource Include="Views\filmlogo.png" />
+    <Resource Include="Views\logo.png" />
     <Resource Include="Views\logout.png" />
+    <Resource Include="Views\Password\backgroundcinema.jpg" />
     <Resource Include="Views\ProductManagement\DauCong.png" />
     <Resource Include="Views\ProductManagement\delete.png" />
     <Resource Include="Views\ProductManagement\money.png" />

@@ -1,4 +1,4 @@
-﻿<Window x:Class="CinemaMagic.Views.LoginView"
+﻿<Window Background="{DynamicResource Backgroundcinema2}" x:Class="CinemaMagic.Views.LoginView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,7 +9,6 @@
         Width="800"
         Height="550"
         AllowsTransparency="True"
-        Background="Transparent"
         MouseDown="Window_MouseDown"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
@@ -45,15 +44,12 @@
 
     <Border CornerRadius="12">
         <Border.Background>
-            <ImageBrush Stretch="None" ImageSource="/Views/background.jpg" />
+            <ImageBrush Stretch="None" Opacity="0.375" ImageSource="/Views/backgroundcinema.jpg" />
         </Border.Background>
 
-        <Border CornerRadius="10" Opacity="0.90">
+        <Border CornerRadius="10" Opacity="1">
             <Border.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="0, 1">
-                    <GradientStop Offset="0" Color="#fffaf5" />
-                    <GradientStop Offset="1" Color="#DBC4AD" />
-                </LinearGradientBrush>
+                <ImageBrush/>
             </Border.Background>
 
             <Grid>
@@ -80,7 +76,7 @@
                         FontFamily="Segoe Print"
                         FontSize="22"
                         FontWeight="DemiBold"
-                        Foreground="#623b00"
+                        Foreground="White"
                         Text="Login" Height="83" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5" >
                         <TextBlock.RenderTransform>
                             <TransformGroup>
@@ -101,7 +97,7 @@
                         Cursor="Hand"
                         FontFamily="Montserrat"
                         FontSize="16"
-                        Foreground="#623b00">
+                        Foreground="#623b00" Background="#FF01FD7D">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="#DBC4AD" />
@@ -135,7 +131,7 @@
                         Cursor="Hand"
                         FontFamily="Montserrat"
                         FontSize="12"
-                        Foreground="#fffaf5">
+                        Foreground="#fffaf5" Background="#FFF1043B">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="#623b00" />
@@ -173,31 +169,38 @@
                     <Image
                         Width="350"
                         Height="175"
-                        Source="/Images/logo1.png"
-                        Stretch="Uniform" />
+                        Stretch="Uniform" Source="/Views/filmlogo.png" />
                     <TextBlock
                         Margin="0,-15,0,0"
-                        FontFamily="Franklin Gothic Medium"
-                        FontSize="15"
-                        FontWeight="Medium"
-                        Foreground="#623b00"
+                        FontFamily="Segoe Print"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Foreground="White"
                         Text="Cinema Management System"
                         TextAlignment="Center" />
 
                     <TextBlock
                         Margin="0,30,0,0"
                         FontFamily="Montserrat"
-                        FontSize="12"
-                        Foreground="#623b00"
+                        FontSize="16"
+                        Foreground="White"
                         Text="User Name"
                         TextAlignment="Left" FontWeight="Bold" />
                     <DockPanel Margin="0,5,0,0" LastChildFill="True">
                         <materialDesign:PackIcon
                             Margin="0,0,5,1"
-                            VerticalAlignment="Bottom"
                             DockPanel.Dock="Left"
-                            Foreground="#623b00"
-                            Kind="Account" />
+                            Foreground="#FF08FF54"
+                            Kind="Account" FontSize="16" Height="28" Width="36" RenderTransformOrigin="0.5,0.5" >
+                            <materialDesign:PackIcon.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform X="-4"/>
+                                </TransformGroup>
+                            </materialDesign:PackIcon.RenderTransform>
+                        </materialDesign:PackIcon>
                         <TextBox
                             x:Name="txtUsername"
                             Height="28"
@@ -209,26 +212,33 @@
                             FontFamily="Montserrat"
                             FontSize="13"
                             FontWeight="Medium"
-                            Foreground="Black"
+                            Foreground="White"
                             Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" />
                     </DockPanel>
 
                     <TextBlock
                         Margin="0,10,0,0"
                         FontFamily="Montserrat"
-                        FontSize="12"
-                        FontWeight="Bold"
-                        Foreground="#623b00"
+                        FontSize="16"
+                        Foreground="White"
                         Text="Password"
-                        TextAlignment="Left" />
+                        TextAlignment="Left" FontWeight="Bold" />
 
                     <DockPanel Margin="0,5,0,0" LastChildFill="True">
                         <materialDesign:PackIcon
                             Margin="0,0,5,2"
-                            VerticalAlignment="Bottom"
                             DockPanel.Dock="Left"
-                            Foreground="#623b00"
-                            Kind="Lock" />
+                            Foreground="#FF15C233"
+                            Kind="Lock" Height="29" Width="35" RenderTransformOrigin="0.5,0.5" >
+                            <materialDesign:PackIcon.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform X="-6"/>
+                                </TransformGroup>
+                            </materialDesign:PackIcon.RenderTransform>
+                        </materialDesign:PackIcon>
                         <PasswordBox
                             x:Name="txtPassword"
                             Height="28"
@@ -240,7 +250,7 @@
                             FontFamily="Montserrat"
                             FontSize="13"
                             FontWeight="Medium"
-                            Foreground="Black" />
+                            Foreground="White" />
                     </DockPanel>
 
 
@@ -260,9 +270,17 @@
                         BorderThickness="0"
                         Command="{Binding ForgotPasswordCommand}"
                         Content="Forgot Password?"
-                        FontSize="12"
-                        FontWeight="DemiBold"
-                        Foreground="#623b00" />
+                        FontWeight="Bold"
+                        Foreground="#FFE4FF00" Width="145" RenderTransformOrigin="0.5,0.5"  FontSize="13" >
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform X="0"/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                    </Button>
 
 
 
@@ -276,7 +294,7 @@
                         FontFamily="Montserrat"
                         FontSize="12"
                         FontWeight="DemiBold"
-                        Foreground="#fffaf5">
+                        Foreground="#fffaf5" Background="#FF0A0891">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="#623b00" />

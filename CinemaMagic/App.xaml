@@ -13,6 +13,14 @@
                     SecondaryColor="Amber" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <LinearGradientBrush x:Key="Backgroundcinema" EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF0A5858" Offset="0.131"/>
+                <GradientStop Color="#FF06414E" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="Backgroundcinema2" EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF105A5A" Offset="0.066"/>
+                <GradientStop Color="#FF000E0E" Offset="0.626"/>
+            </LinearGradientBrush>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
