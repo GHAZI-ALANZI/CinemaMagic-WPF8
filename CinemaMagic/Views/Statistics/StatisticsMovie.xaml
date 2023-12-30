@@ -40,7 +40,7 @@
                 <Border BorderBrush="#3F2305"
                         Grid.Row="0"
                         Margin="10,0,10,0"
-                        BorderThickness="0,0,0,1"/>
+                        BorderThickness="0,0,0,1" Background="{DynamicResource tobbarbackground}"/>
 
                 <TextBlock Grid.Row="0"
                    VerticalAlignment="Center"
@@ -48,7 +48,7 @@
                    Text="Movie revenue ranking"
                    FontWeight="SemiBold"
                    FontSize="24"
-                   Margin="20,0,0,0"/>
+                   Margin="20,0,0,0" Foreground="White" FontFamily="Segoe Print"/>
                 <StackPanel Grid.Row="0"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Right"
@@ -60,7 +60,7 @@
                         Loaded="cbBoxChuKy_Loaded"
                         SelectedItem="{Binding SelectedMovieIncomePeriod}"
                         SelectionChanged="cbBoxChuKy_SelectionChanged"
-                        Style="{StaticResource MaterialDesignOutlinedComboBox}">
+                        Style="{StaticResource MaterialDesignOutlinedComboBox}" Foreground="White">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Loaded">
                                 <i:InvokeCommandAction Command="{Binding ChangeMovieIncomePeriodCommand}" />
@@ -78,7 +78,7 @@
                         x:Name="cbBoxThoiDiem"
                         materialDesign:HintAssist.Hint="Select time frame"
                         SelectedItem="{Binding SelectedMovieIncomeTime}"
-                        Style="{StaticResource MaterialDesignOutlinedComboBox}">
+                        Style="{StaticResource MaterialDesignOutlinedComboBox}" Foreground="White">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Loaded">
                                 <i:InvokeCommandAction Command="{Binding ChangeMovieIncomePeriodCommand}"/>

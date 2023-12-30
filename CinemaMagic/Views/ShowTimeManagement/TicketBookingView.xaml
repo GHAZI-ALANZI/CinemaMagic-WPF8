@@ -24,7 +24,7 @@
             <RowDefinition Height="30" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Grid Background="#DFD7BF">
+        <Grid Background="{DynamicResource tobbarbackground}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition Width="30" />
@@ -36,8 +36,8 @@
                 VerticalAlignment="Center"
                 FontSize="19"
                 FontWeight="SemiBold"
-                Foreground="#3F2305"
-                Text="CinemaMagic" />
+                Foreground="White"
+                Text="CinemaMagic" FontFamily="Segoe Print" />
 
             <Button
                 x:Name="btnClose"
@@ -51,10 +51,10 @@
                 Foreground="#fffaf5">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#3f2305" />
+                        <Setter Property="Background" Value="Red" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#8B580B" />
+                                <Setter Property="Background" Value="#FFE23131" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -93,12 +93,25 @@
 
 
                 <TextBlock
-                    Height="45"
-                    Background="LightGray"
                     FontSize="30"
                     Foreground="Red"
                     Text="Display"
-                    TextAlignment="Center" />
+                    TextAlignment="Center" FontFamily="Segoe Print" RenderTransformOrigin="0.5,0.5" Margin="0,8,0,487" Grid.RowSpan="2" >
+                    <TextBlock.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="#FF0B3B93" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TextBlock.Background>
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-3"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
                 <Border
                     Grid.Row="1"
                     BorderBrush="Black"
@@ -224,12 +237,12 @@
 
 
                                         <TextBlock
-                                            Width="50"
+                                            Width="63"
                                             Margin="3,0,0,0"
                                             HorizontalAlignment="Left"
                                             VerticalAlignment="Center"
                                             FontSize="18"
-                                            Text="Movie:" />
+                                            Text="Movie:" Grid.ColumnSpan="2" />
 
                                         <TextBlock
                                             Grid.Column="1"
@@ -286,7 +299,16 @@
                                             VerticalAlignment="Center"
                                             FontSize="18"
                                             FontWeight="SemiBold"
-                                            Text="CinemaMagic" />
+                                            Text="CinemaMagic" RenderTransformOrigin="0.5,0.5" >
+                                            <TextBlock.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform/>
+                                                    <SkewTransform/>
+                                                    <RotateTransform/>
+                                                    <TranslateTransform X="-7"/>
+                                                </TransformGroup>
+                                            </TextBlock.RenderTransform>
+                                        </TextBlock>
                                     </Grid>
 
                                     <Grid Grid.Row="3">
@@ -422,7 +444,7 @@
                     materialDesign:ButtonAssist.CornerRadius="15"
                     Command="{Binding ContinueCommand}"
                     Content="Continue"
-                    FontSize="20" />
+                    FontSize="20" BorderBrush="{x:Null}" Background="#FF03766B" />
             </Grid>
         </Grid>
 

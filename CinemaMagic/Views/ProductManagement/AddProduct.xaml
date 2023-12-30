@@ -22,7 +22,6 @@
     mc:Ignorable="d">
     <Border
         Background="White"
-        BorderBrush="Brown"
         BorderThickness="1"
         CornerRadius="10">
         <Grid>
@@ -34,7 +33,7 @@
             </Grid.RowDefinitions>
 
             <Border
-                Background="#DFD7BF"
+                Background="{DynamicResource tobbarbackground}"
                 BorderBrush="Black"
                 BorderThickness="0,0,0,1"
                 CornerRadius="10,10,0,0">
@@ -44,7 +43,7 @@
                     VerticalAlignment="Center"
                     FontSize="25"
                     FontWeight="SemiBold"
-                    Text="Add product" />
+                    Text="Add product" FontFamily="Segoe Print" Foreground="White" />
             </Border>
 
 
@@ -230,7 +229,7 @@
                     Height="25"
                     Margin="30,0,0,0"
                     HorizontalAlignment="Left"
-                    Command="{Binding addImageCommand}">
+                    Command="{Binding addImageCommand}" BorderBrush="#FF08139D">
                     <Button.Background>
                         <ImageBrush ImageSource="/Views/ProductManagement/Open.png" />
                     </Button.Background>
@@ -244,7 +243,7 @@
                     Margin="240,4,12,4"
                     materialDesign:ButtonAssist.CornerRadius="20"
                     Command="{Binding acceptCommand}"
-                    Content="Agree" />
+                    Content="Agree" BorderBrush="{x:Null}" Background="#FF04A167" />
 
                 <Button
                     Width="78"
@@ -252,7 +251,7 @@
                     materialDesign:ButtonAssist.CornerRadius="20"
                     Background="Red"
                     Command="{Binding quitCommand}"
-                    Content="Cancel" />
+                    Content="Cancel" BorderBrush="{x:Null}" />
             </Grid>
         </Grid>
     </Border>

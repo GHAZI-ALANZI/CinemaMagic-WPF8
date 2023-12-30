@@ -1,11 +1,5 @@
 ﻿using CinemaMagic.Models.DTOs.StaffManagement;
 using CinemaMagic.Views.StaffManagement;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
@@ -13,8 +7,8 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
 {
     public partial class StaffManageVM
     {
-     
-        public ICommand StaffDetailCommand {  get; set; }
+
+        public ICommand StaffDetailCommand { get; set; }
 
         void staffDetail()
         {
@@ -36,7 +30,7 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
 
     public class StaffDetailViewModel
     {
-        public string Id {  get; set; }
+        public string Id { get; set; }
         public string FullName { get; set; }
         public string Birth { get; set; }
         public string Gender { get; set; }
@@ -45,23 +39,23 @@ namespace CinemaMagic.ViewModels.StaffManagementVM
         public int Salary { get; set; }
         public string Role { get; set; }
         public string NgayVaoLam { get; set; }
-        public BitmapImage ImageSource {  get; set; }
+        public BitmapImage ImageSource { get; set; }
 
-        public ICommand exitCommand {  get; set; }
+        public ICommand exitCommand { get; set; }
         StaffDetailView wd;
-        public StaffDetailViewModel(StaffDTO staff,StaffDetailView wd)
+        public StaffDetailViewModel(StaffDTO staff, StaffDetailView wd)
         {
             Id = staff.IdFormat;
-            FullName= staff.FullName;
-            Birth= staff.Birth;
-            Gender= staff.Gender;
-            Email= staff.Email;
-            PhoneNumber= staff.PhoneNumber;
-            Salary= staff.Salary;
-            Role= staff.Role;
-            NgayVaoLam=staff.NgayVaoLam;
+            FullName = staff.FullName;
+            Birth = staff.Birth;
+            Gender = staff.Gender;
+            Email = staff.Email;
+            PhoneNumber = staff.PhoneNumber;
+            Salary = staff.Salary;
+            Role = staff.Role;
+            NgayVaoLam = staff.NgayVaoLam;
             ImageSource = staff.ImageSource;
-            exitCommand=new ViewModelCommand(exit);
+            exitCommand = new ViewModelCommand(exit);
             this.wd = wd;
         }
 

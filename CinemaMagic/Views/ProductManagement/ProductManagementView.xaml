@@ -69,7 +69,7 @@
                     materialDesign:ButtonAssist.CornerRadius="8"
                     Command="{Binding showWDAddProductCommand}"
                     FontFamily="Arial"
-                    FontSize="22">
+                    FontSize="22" BorderBrush="{x:Null}" Background="#FF05A6C0">
                     <Button.Content>
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon

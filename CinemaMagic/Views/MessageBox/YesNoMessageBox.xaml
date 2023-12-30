@@ -50,7 +50,7 @@
                 <RowDefinition Height="45" />
             </Grid.RowDefinitions>
             <Border Background="#DBC4AD" CornerRadius="12,12,0,0">
-                <Grid>
+                <Grid Background="{DynamicResource topicbackground}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30" />
                         <ColumnDefinition />
@@ -63,7 +63,16 @@
                         Grid.Column="1"
                         FontSize="20"
                         FontWeight="DemiBold"
-                        Text="Topic" />
+                        Text="Topic" Foreground="White" FontFamily="Segoe Print" RenderTransformOrigin="0.5,0.5" >
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="-4"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
                     <Button
                         x:Name="btnClose"
                         Grid.Column="2"
@@ -72,7 +81,7 @@
                         Content="X"
                         Cursor="Hand"
                         FontSize="12"
-                        Foreground="#fffaf5">
+                        Foreground="#fffaf5" BorderBrush="{x:Null}" Background="Red">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border
@@ -114,9 +123,9 @@
                     Name="btnYes"
                     Width="90"
                     Margin="0,0,110,0"
-                    Background="SaddleBrown"
+                    Background="#FF1A8B13"
                     Click="btnYes_Click"
-                    Content="YES" />
+                    Content="YES" BorderBrush="{x:Null}" />
             </Grid>
         </Grid>
 

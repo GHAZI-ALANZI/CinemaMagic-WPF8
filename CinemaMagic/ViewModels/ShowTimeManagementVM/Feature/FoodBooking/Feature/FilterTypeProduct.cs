@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
 namespace CinemaMagic.ViewModels.ShowTimeManagementVM
 {
     public partial class FoodBookingViewModel
     {
-        public ICommand FilterAllCommand {  get; set; }
-        public ICommand FilterThucAnCommand {  get; set; }
-        public ICommand FilterDoUongCommand {  get; set; }
+        public ICommand FilterAllCommand { get; set; }
+        public ICommand FilterThucAnCommand { get; set; }
+        public ICommand FilterDoUongCommand { get; set; }
 
         private void Filter()
         {
             FilterAllCommand = new ViewModelCommand(FilterAll);
-            FilterThucAnCommand= new ViewModelCommand(FilterThucAn);
-            FilterDoUongCommand=new ViewModelCommand(FilterDoUong);
+            FilterThucAnCommand = new ViewModelCommand(FilterThucAn);
+            FilterDoUongCommand = new ViewModelCommand(FilterDoUong);
 
         }
 

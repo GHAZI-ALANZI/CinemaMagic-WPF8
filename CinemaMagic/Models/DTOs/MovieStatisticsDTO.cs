@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CinemaMagic.Models.DTOs
+﻿namespace CinemaMagic.Models.DTOs
 {
     public class MovieStatisticsDTO
     {

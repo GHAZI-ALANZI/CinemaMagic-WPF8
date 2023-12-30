@@ -41,7 +41,7 @@
         </Grid.RowDefinitions>
 
 
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0" Background="{DynamicResource tobbarbackground}">
             <StackPanel Margin="30,0,0,0" Orientation="Horizontal">
 
                 <TextBox
@@ -53,8 +53,8 @@
                     AllowDrop="True"
                     BorderThickness="0,0,0,1"
                     FontSize="20"
-                    Foreground="#DD000000"
-                    Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
+                    Foreground="#DDFFFFFF"
+                    Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" SelectionBrush="#FF7E2506" />
 
 
                 <StackPanel
@@ -69,7 +69,7 @@
                         VerticalAlignment="Top"
                         materialDesign:ButtonAssist.CornerRadius="10"
                         Command="{Binding showWdAddStaffCommand}"
-                        FontSize="20"
+                        FontSize="20" BorderBrush="{x:Null}" Background="#FF08ADAD"
                         >
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
@@ -79,7 +79,7 @@
                                     Margin="0,0,0,0"
                                     VerticalAlignment="Center"
                                     Kind="PlusCircleOutline" />
-                                <TextBlock Margin="5,0,0,0" Text="Add emp" />
+                                <TextBlock Margin="5,0,0,0" Text="Add emp" Foreground="White" />
                             </StackPanel>
                         </Button.Content>
                     </Button>
@@ -93,7 +93,7 @@
                         VerticalAlignment="Bottom"
                         Height="40"
                         Width="180"
-                        Command="{Binding PhatLuongCommand}">
+                        Command="{Binding PhatLuongCommand}" Background="#FF0369B1" BorderBrush="{x:Null}">
                     <Button.Content>
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon
@@ -116,7 +116,7 @@
                     materialDesign:ButtonAssist.CornerRadius="10"
                     Command="{Binding ExportExcelCommand}"
                     FontSize="17"
-                    Foreground="AntiqueWhite">
+                    Foreground="AntiqueWhite" Background="#FF09D422" BorderBrush="{x:Null}">
                     <Button.Content>
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon
@@ -125,7 +125,16 @@
                                 Margin="0,0,0,0"
                                 VerticalAlignment="Center"
                                 Kind="File" />
-                            <TextBlock Margin="5,6,0,2" Text="Export to Excel file" />
+                            <TextBlock Margin="5,6,0,2" Text="Export to Excel file" RenderTransformOrigin="0.5,0.5" >
+                                <TextBlock.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform Y="-3" X="-6"/>
+                                    </TransformGroup>
+                                </TextBlock.RenderTransform>
+                            </TextBlock>
                         </StackPanel>
                     </Button.Content>
                 </Button>
@@ -261,7 +270,7 @@
                                                     <materialDesign:PackIcon
                                                         Width="30"
                                                         Height="30"
-                                                        Kind="AccountEdit" />
+                                                        Kind="AccountEdit" Foreground="#FF02A8CE" />
                                                     <i:Interaction.Triggers>
                                                         <i:EventTrigger EventName="MouseLeftButtonDown">
                                                             <i:InvokeCommandAction Command="{Binding DataContext.showWdEditStaffCommand, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" CommandParameter="{Binding}" />
@@ -287,7 +296,7 @@
                                                     <materialDesign:PackIcon
                                                         Width="30"
                                                         Height="30"
-                                                        Kind="Delete" />
+                                                        Kind="Delete" Foreground="#FFFB0404" />
                                                     <i:Interaction.Triggers>
                                                         <i:EventTrigger EventName="MouseLeftButtonDown">
                                                             <i:InvokeCommandAction Command="{Binding DataContext.deleteStaffCommand, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" CommandParameter="{Binding}" />

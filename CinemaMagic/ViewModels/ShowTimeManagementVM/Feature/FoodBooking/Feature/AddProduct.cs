@@ -1,20 +1,14 @@
 ﻿using CinemaMagic.Models.DTOs.ProductManagement;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
 
 namespace CinemaMagic.ViewModels.ShowTimeManagementVM
 {
     public partial class FoodBookingViewModel
     {
-        public ICommand AddProductCommand {  get; set; }
-        public ICommand Cong1QuantityChoiceCommand {  get; set; }
-        public ICommand Tru1QuantityChoiceCommand {  get; set; }
+        public ICommand AddProductCommand { get; set; }
+        public ICommand Cong1QuantityChoiceCommand { get; set; }
+        public ICommand Tru1QuantityChoiceCommand { get; set; }
 
         private ObservableCollection<ProductDTO> dSSPChon;
         public ObservableCollection<ProductDTO> DSSPChon
@@ -52,7 +46,7 @@ namespace CinemaMagic.ViewModels.ShowTimeManagementVM
 
         private void AddProduct(object obj)
         {
-            if(obj is ProductDTO productDTO)
+            if (obj is ProductDTO productDTO)
             {
                 if (!DSSPChon.Contains(productDTO))
                 {
@@ -92,7 +86,7 @@ namespace CinemaMagic.ViewModels.ShowTimeManagementVM
                     productDTO.Quantity_Choice -= 1;
                     TotalPrice -= productDTO.Price;
                 }
-                else 
+                else
                 {
                     DSSPChon.Remove(productDTO);
                     TotalPrice -= productDTO.Price;

@@ -71,7 +71,7 @@
                         FontSize="25"
                         FontWeight="Bold"
                         Text="PAY BILL"
-                        TextAlignment="Center" />
+                        TextAlignment="Center" FontFamily="Segoe Print" />
                 </materialDesign:Card>
 
 
@@ -103,7 +103,16 @@
                                 VerticalAlignment="Center"
                                 FontSize="25"
                                 FontWeight="Bold"
-                                Text="Customer information" />
+                                Text="Customer information" FontFamily="Segoe Print" RenderTransformOrigin="0.5,0.5" >
+                                <TextBlock.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform X="-7"/>
+                                    </TransformGroup>
+                                </TextBlock.RenderTransform>
+                            </TextBlock>
                         </Border>
 
 
@@ -243,7 +252,7 @@
                                 VerticalAlignment="Center"
                                 FontSize="25"
                                 FontWeight="Bold"
-                                Text="Invoice" />
+                                Text="Invoice" FontFamily="Segoe Print" />
                         </Border>
 
 
@@ -371,7 +380,7 @@
                                 VerticalAlignment="Bottom"
                                 materialDesign:ButtonAssist.CornerRadius="2"
                                 Command="{Binding Paycommand}"
-                                Content="Payment" />
+                                Content="Payment" BorderBrush="{x:Null}" Background="#FF038585" />
                         </Grid>
 
 
@@ -410,7 +419,7 @@
                             VerticalAlignment="Center"
                             FontSize="25"
                             FontWeight="Bold"
-                            Text="Movie" />
+                            Text="Movie" FontFamily="Segoe Print" />
                     </Border>
 
                     <Grid Grid.Row="1">
@@ -662,7 +671,7 @@
                             VerticalAlignment="Center"
                             FontSize="25"
                             FontWeight="Bold"
-                            Text="Food " />
+                            Text="Food " FontFamily="Segoe Print" />
                     </Border>
 
 
@@ -829,7 +838,7 @@
                             VerticalAlignment="Center"
                             FontSize="25"
                             FontWeight="Bold"
-                            Text="Note" />
+                            Text="Note" FontFamily="Segoe Print" />
                     </Border>
                     <TextBox
                         Grid.Row="1"

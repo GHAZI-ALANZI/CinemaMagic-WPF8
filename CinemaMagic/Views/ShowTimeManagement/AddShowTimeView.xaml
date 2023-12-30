@@ -35,7 +35,7 @@
 
 
             <Border
-                Background="#DFD7BF"
+                Background="{DynamicResource tobbarbackground}"
                 BorderBrush="Black"
                 BorderThickness="0,0,0,1"
                 CornerRadius="10,10,0,0">
@@ -44,7 +44,7 @@
                     VerticalAlignment="Center"
                     FontSize="25"
                     FontWeight="Bold"
-                    Text="Add Show Schedule" />
+                    Text="Add Show Schedule" Foreground="White" FontFamily="Segoe Print" />
             </Border>
 
             <Grid Grid.Row="1">
@@ -166,14 +166,14 @@
                     materialDesign:ButtonAssist.CornerRadius="20"
                     Background="Red"
                     Command="{Binding CancelCommand}"
-                    Content="Cancel" />
+                    Content="Cancel" BorderBrush="{x:Null}" />
                 <Button
                     Name="btnXacNhan"
                     Width="90"
                     Margin="590,0,10,0"
                     materialDesign:ButtonAssist.CornerRadius="20"
                     Command="{Binding AcceptCommand}"
-                    Content="Confirm" />
+                    Content="Confirm" BorderBrush="{x:Null}" Background="#FF04AD86" />
             </Grid>
         </Grid>
     </Border>

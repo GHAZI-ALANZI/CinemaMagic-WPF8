@@ -41,7 +41,7 @@
         </Grid.RowDefinitions>
 
 
-        <Border Background="#DFD7BF"
+        <Border Background="{DynamicResource tobbarbackground}"
                 Margin="15,10,15,0"
                 Height="335"
                 VerticalAlignment="Top"
@@ -53,7 +53,16 @@
                 VerticalAlignment="Top"
                 FontSize="20"
                 FontWeight="Bold"
-                Text="Personal information" />
+                Text="Personal information" Foreground="#E5FFFEFE" FontFamily="Segoe Print" RenderTransformOrigin="0.5,0.5" >
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-2"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
         </Border>
 
 
@@ -96,7 +105,7 @@
                     VerticalAlignment="Top"
                     Content="Change image"
                     FontSize="15" 
-                    Command="{Binding editImageCommand}" Margin="85,235,70,0" Grid.RowSpan="2"/>
+                    Command="{Binding editImageCommand}" Margin="85,235,70,0" Grid.RowSpan="2" BorderBrush="{x:Null}" Background="#FF04569D"/>
                 </Grid>
 
 
@@ -235,7 +244,7 @@
         </materialDesign:Card>
 
 
-        <Border Grid.Row="2" Background="#DFD7BF"
+        <Border Grid.Row="2" Background="{DynamicResource tobbarbackground}"
                 Margin="15,5,15,0"
                 CornerRadius="10"
                 Grid.RowSpan="2"
@@ -245,7 +254,16 @@
                 VerticalAlignment="Top"
                 FontSize="20"
                 FontWeight="Bold"
-                Text="Change password " />
+                Text="Change password " Foreground="#E5FFFFFF" FontFamily="Segoe Print" RenderTransformOrigin="0.5,0.5" >
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-3"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
         </Border>
 
         <materialDesign:Card Grid.Row="3"
@@ -333,7 +351,7 @@
                                 Height="40"
                                 FontSize="25" 
                                 Width="230"
-                                Command="{Binding changePasswordCommand}"/>
+                                Command="{Binding changePasswordCommand}" Background="#FF0A9F7C" BorderBrush="{x:Null}"/>
                     </StackPanel>
 
                 </Grid>

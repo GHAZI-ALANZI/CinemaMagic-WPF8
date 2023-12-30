@@ -22,7 +22,6 @@
     mc:Ignorable="d">
     <Border
         Background="White"
-        BorderBrush="Brown"
         BorderThickness="1"
         CornerRadius="10">
         <Grid>
@@ -38,17 +37,17 @@
 
 
             <Border
-                Background="#DFD7BF"
+                Background="{DynamicResource tobbarbackground}"
                 BorderBrush="Black"
                 BorderThickness="0,0,0,1"
                 CornerRadius="10,10,0,0">
                 <TextBlock
                     Margin="20,0,0,0"
                     VerticalAlignment="Center"
-                    FontFamily="Segoe UI"
+                    FontFamily="Segoe Print"
                     FontSize="25"
                     FontWeight="Bold"
-                    Text="Edit customer information" />
+                    Text="Edit customer information" Foreground="White" />
             </Border>
 
             <Grid Grid.Row="1">
@@ -245,7 +244,7 @@
                     materialDesign:ButtonAssist.CornerRadius="20"
                     Command="{Binding acceptCommand}"
                     Content="Confirm"
-                    FontSize="15" />
+                    FontSize="15" Foreground="White" Background="#FF28B804" BorderBrush="{x:Null}" />
 
 
             </Grid>

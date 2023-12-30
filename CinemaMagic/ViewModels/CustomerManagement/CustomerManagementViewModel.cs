@@ -1,17 +1,11 @@
 ﻿using CinemaMagic.Models.DataAccessLayer;
 using CinemaMagic.Models.DTOs;
 using CinemaMagic.Views.CustomerManagement;
-using CinemaMagic.Views.VoucherManagement;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CinemaMagic.ViewModels.CustomerManagement
 {
-    public partial class CustomerManagementViewModel: MainBaseViewModel
+    public partial class CustomerManagementViewModel : MainBaseViewModel
     {
         private ObservableCollection<CustomerDTO> dsctm;
         public ObservableCollection<CustomerDTO> DSCTM

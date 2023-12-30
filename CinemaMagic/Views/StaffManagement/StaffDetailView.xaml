@@ -21,7 +21,6 @@
     mc:Ignorable="d">
     <Border
         Background="White"
-        BorderBrush="Brown"
         BorderThickness="1"
         CornerRadius="12">
         <Grid>
@@ -33,7 +32,7 @@
 
             <Border
                 Grid.Row="0"
-                Background="#DFD7BF"
+                Background="{DynamicResource tobbarbackground}"
                 CornerRadius="12,12,0,0">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -47,8 +46,8 @@
                         VerticalAlignment="Center"
                         FontSize="20"
                         FontWeight="SemiBold"
-                        Foreground="#3F2305"
-                        Text="information" />
+                        Foreground="White"
+                        Text="information" FontFamily="Segoe Print" />
 
 
 
@@ -64,10 +63,10 @@
                         Foreground="#fffaf5">
                         <Button.Style>
                             <Style TargetType="Button">
-                                <Setter Property="Background" Value="#3f2305" />
+                                <Setter Property="Background" Value="Red" />
                                 <Style.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#8B580B" />
+                                        <Setter Property="Background" Value="#FFE23C3C" />
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>

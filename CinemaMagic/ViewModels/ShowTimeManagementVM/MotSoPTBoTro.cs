@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CinemaMagic.ViewModels.ShowTimeManagementVM
+﻿namespace CinemaMagic.ViewModels.ShowTimeManagementVM
 {
     public class MotSoPTBoTro
     {

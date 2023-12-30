@@ -78,7 +78,7 @@
                             <ComboBoxItem Content="By year"/>
                         </ComboBox>
                         <ComboBox Grid.Column="1"
-                                  Width="100"
+                                  Width="132"
                                   x:Name="cbBoxThoiDiem"
                                   materialDesign:HintAssist.Hint="Select time period"
                                   SelectedItem="{Binding SelectedCustomerIncomeTime}"

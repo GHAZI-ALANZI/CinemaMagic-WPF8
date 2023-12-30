@@ -42,7 +42,7 @@
         </Grid.RowDefinitions>
 
         <Grid>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Background="{DynamicResource tobbarbackground}">
 
                 <ComboBox x:Name="cbBoxFilter"
                         Width="160"
@@ -78,12 +78,30 @@
                             Width="25"
                             Height="25"
                             VerticalAlignment="Center"
-                            Kind="AlertCircleOutline" />
+                            Kind="AlertCircleOutline" RenderTransformOrigin="0.5,0.5" Foreground="#FFEDE608" >
+                            <materialDesign:PackIcon.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform Y="-2" X="-7"/>
+                                </TransformGroup>
+                            </materialDesign:PackIcon.RenderTransform>
+                        </materialDesign:PackIcon>
                         <TextBlock
                             Margin="3,0,0,0"
                             VerticalAlignment="Center"
                             FontSize="18"
-                            Text="Report" />
+                            Text="Report" RenderTransformOrigin="0.5,0.5" >
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform Y="-2" X="-4"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
 
                     </StackPanel>
 

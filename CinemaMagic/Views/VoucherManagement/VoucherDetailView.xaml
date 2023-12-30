@@ -21,7 +21,6 @@
     mc:Ignorable="d">
     <Border
         Background="White"
-        BorderBrush="Brown"
         BorderThickness="1"
         CornerRadius="12">
         <Grid>
@@ -33,7 +32,7 @@
                 Grid.Row="0"
                 Background="#DFD7BF"
                 CornerRadius="12,12,0,0">
-                <Grid>
+                <Grid Background="{DynamicResource tobbarbackground}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="305" />
                         <ColumnDefinition Width="25" />
@@ -42,10 +41,10 @@
                         Grid.Column="0"
                         Margin="10,0,0,0"
                         VerticalAlignment="Center"
-                        FontFamily="Candara"
+                        FontFamily="Segoe Print"
                         FontSize="20"
                         FontWeight="SemiBold"
-                        Foreground="#3F2305"
+                        Foreground="White"
                         Text="Details of the voucher" />
 
                     <Button
@@ -60,10 +59,10 @@
                         Foreground="#fffaf5">
                         <Button.Style>
                             <Style TargetType="Button">
-                                <Setter Property="Background" Value="#3f2305" />
+                                <Setter Property="Background" Value="Red" />
                                 <Style.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#8B580B" />
+                                        <Setter Property="Background" Value="#FFF53939" />
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>

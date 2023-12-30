@@ -22,7 +22,6 @@
     mc:Ignorable="d">
     <Border
         Background="White"
-        BorderBrush="Brown"
         BorderThickness="1"
         CornerRadius="10">
         <Grid>
@@ -38,7 +37,7 @@
 
 
             <Border
-                Background="#DFD7BF"
+                Background="{DynamicResource tobbarbackground}"
                 BorderBrush="Black"
                 BorderThickness="0,0,0,1"
                 CornerRadius="10,10,0,0">
@@ -47,7 +46,7 @@
                     VerticalAlignment="Center"
                     FontSize="25"
                     FontWeight="Bold"
-                    Text="Edit voucher" />
+                    Text="Edit voucher" Foreground="White" FontFamily="Segoe Print" />
             </Border>
 
 
@@ -234,14 +233,14 @@
                     materialDesign:ButtonAssist.CornerRadius="20"
                     Background="Red"
                     Command="{Binding quitCommand}"
-                    Content="Cancel" />
+                    Content="Cancel" BorderBrush="{x:Null}" />
                 <Button
                     Name="btnXacNhan"
                     Width="90"
                     Margin="430,0,10,0"
                     materialDesign:ButtonAssist.CornerRadius="20"
                     Command="{Binding acceptCommand}"
-                    Content="Confirm" />
+                    Content="Confirm" BorderBrush="{x:Null}" Background="#FF078F7C" />
             </Grid>
         </Grid>
     </Border>

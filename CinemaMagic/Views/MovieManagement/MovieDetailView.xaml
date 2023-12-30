@@ -80,7 +80,16 @@
                         FontSize="20"
                         FontWeight="SemiBold"
                         Foreground="White"
-                        Text="Movie details" />
+                        Text="Movie details" RenderTransformOrigin="0.5,0.5" >
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="-2"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
 
 
                     <Button

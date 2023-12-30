@@ -58,7 +58,16 @@
                         FontSize="20"
                         FontWeight="SemiBold"
                         Foreground="White"
-                        Text="Add movie" />
+                        Text="Add movie" RenderTransformOrigin="0.5,0.5" >
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="-2"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
                     <Button
                         x:Name="btnMinimize"
                         Grid.Column="1"

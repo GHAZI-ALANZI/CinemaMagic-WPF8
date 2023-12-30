@@ -210,7 +210,7 @@
                                                 <materialDesign:PackIcon
                                                     Width="30"
                                                     Height="30"
-                                                    Kind="MovieEditOutline" />
+                                                    Kind="MovieEditOutline" Foreground="#E50070E4" />
                                                 <i:Interaction.Triggers>
                                                     <i:EventTrigger EventName="MouseLeftButtonUp">
                                                         <i:InvokeCommandAction Command="{Binding DataContext.EditMovieCommand, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" CommandParameter="{Binding}" />

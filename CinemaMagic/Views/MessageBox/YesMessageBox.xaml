@@ -49,7 +49,7 @@
                 <RowDefinition />
                 <RowDefinition Height="45" />
             </Grid.RowDefinitions>
-            <Border Background="#DBC4AD" CornerRadius="12,12,0,0">
+            <Border Background="{DynamicResource topicbackground}" CornerRadius="12,12,0,0">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30" />
@@ -63,7 +63,16 @@
                         Grid.Column="1"
                         FontSize="20"
                         FontWeight="DemiBold"
-                        Text="Topic" />
+                        Text="Topic" Foreground="White" FontFamily="Segoe Print" RenderTransformOrigin="0.5,0.5" >
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="-4"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
                     <Button
                         x:Name="btnClose"
                         Grid.Column="2"
@@ -72,7 +81,7 @@
                         Cursor="Hand"
                         FontSize="12"
                         Click="btnClose_Click"
-                        Foreground="#fffaf5">
+                        Foreground="#fffaf5" Background="#FFFF0023" BorderBrush="{x:Null}">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border
@@ -104,7 +113,7 @@
                     Name="btnOk"
                     Width="90"
                     Content="OK"
-                    Click="btnOk_Click"/>
+                    Click="btnOk_Click" BorderBrush="{x:Null}" Background="#FF09A51C"/>
             </Grid>
         </Grid>
 

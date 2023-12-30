@@ -42,14 +42,23 @@
                 </Grid.ColumnDefinitions>
 
 
-                <Border Background="#DFD7BF" CornerRadius="10,10,0,0"
+                <Border Background="{DynamicResource tobbarbackground}" CornerRadius="10,10,0,0"
                         Grid.ColumnSpan="2">
                     <Grid>
                         <TextBlock
                             Margin="10,5,0,0"
                             FontSize="25"
                             FontWeight="Bold"
-                            Text="Incident details" />
+                            Text="Incident details" Foreground="White" FontFamily="Segoe Print" RenderTransformOrigin="0.5,0.5" >
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform Y="-5"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
 
                         <Button
                             x:Name="btnClose"
@@ -63,10 +72,10 @@
                             Click="btnClose_Click">
                             <Button.Style>
                                 <Style TargetType="Button">
-                                    <Setter Property="Background" Value="#3f2305" />
+                                    <Setter Property="Background" Value="Red" />
                                     <Style.Triggers>
                                         <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#8B580B" />
+                                            <Setter Property="Background" Value="#FFFF0047" />
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>

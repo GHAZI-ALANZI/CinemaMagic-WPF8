@@ -1,35 +1,30 @@
 ﻿using CinemaMagic.Models.DTOs.ProductManagement;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace CinemaMagic.ViewModels.ShowTimeManagementVM
 {
     public partial class FoodBookingViewModel
     {
-        public ICommand DeleteAllProductCommand {  get; set; }
-        public ICommand DeleteProductCommand {  get; set; }
+        public ICommand DeleteAllProductCommand { get; set; }
+        public ICommand DeleteProductCommand { get; set; }
 
 
         private void Delete()
         {
-            DeleteAllProductCommand=new ViewModelCommand(DeleteAllProduct);
-            DeleteProductCommand=new ViewModelCommand(DeleteProduct);
+            DeleteAllProductCommand = new ViewModelCommand(DeleteAllProduct);
+            DeleteProductCommand = new ViewModelCommand(DeleteProduct);
         }
 
         private void DeleteAllProduct(object obj)
         {
             ObservableCollection<ProductDTO> list = new ObservableCollection<ProductDTO>();
-            foreach(var item in DSSPChon)
+            foreach (var item in DSSPChon)
             {
                 list.Add(item);
             }
 
-            foreach(var item in list)
+            foreach (var item in list)
             {
                 item.Quantity_Choice = 1;
                 DSSPChon.Remove(item);

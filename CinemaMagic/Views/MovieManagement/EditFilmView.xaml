@@ -58,7 +58,16 @@
                         FontSize="20"
                         FontWeight="SemiBold"
                         Foreground="White"
-                        Text="Edit movie information" />
+                        Text="Edit movie information" RenderTransformOrigin="0.5,0.5" >
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="-3"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
 
 
                     <Button

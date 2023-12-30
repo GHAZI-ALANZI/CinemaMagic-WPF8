@@ -30,13 +30,22 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Border Background="#DFD7BF" CornerRadius="10,10,0,0">
+            <Border Background="{DynamicResource tobbarbackground}" CornerRadius="10,10,0,0">
                 <Grid>
                     <TextBlock
                         Margin="10,0,0,0"
                         FontSize="24"
                         FontWeight="Bold"
-                        Text="Change information" />
+                        Text="Change information" Foreground="White" FontFamily="Segoe Print" RenderTransformOrigin="0.5,0.5" >
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="-3"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
 
                     <Button
                         x:Name="btnClose"
@@ -50,10 +59,10 @@
                         Click="btnClose_Click">
                         <Button.Style>
                             <Style TargetType="Button">
-                                <Setter Property="Background" Value="#3f2305" />
+                                <Setter Property="Background" Value="Red" />
                                 <Style.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#8B580B" />
+                                        <Setter Property="Background" Value="#FFC84141" />
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>
@@ -297,7 +306,7 @@
                         materialDesign:ButtonAssist.CornerRadius="20"
                         Command="{Binding EditErrorCommand}"
                         Content="Confirmation"
-                        FontSize="15" />
+                        FontSize="15" Background="#FF09BA2F" BorderBrush="{x:Null}" />
                 </Grid>
             </Grid>
         </Grid>

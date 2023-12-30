@@ -38,7 +38,7 @@
         <Border BorderBrush="#3f2305" BorderThickness="0,0,0,0.5">
 
 
-            <DockPanel Grid.Row="0">
+            <DockPanel Grid.Row="0" Background="{DynamicResource tobbarbackground}">
 
 
                 <Button
@@ -47,8 +47,8 @@
                     BorderThickness="0"
                     Command="{Binding AuditoriumCommand}"
                     Content="All"
-                    Foreground="Black"
-                    Style="{StaticResource MaterialDesignOutlinedDarkButton}" />
+                    Foreground="White"
+                    Style="{StaticResource MaterialDesignOutlinedDarkButton}" BorderBrush="{x:Null}" />
 
                 <Button
                     Height="60"
@@ -56,8 +56,8 @@
                     BorderThickness="0"
                     Command="{Binding AuditoriumCommand1}"
                     Content="Theater 1"
-                    Foreground="Black"
-                    Style="{StaticResource MaterialDesignOutlinedDarkButton}" />
+                    Foreground="White"
+                    Style="{StaticResource MaterialDesignOutlinedDarkButton}" BorderBrush="{x:Null}" />
 
 
                 <Button
@@ -66,8 +66,8 @@
                     BorderThickness="0"
                     Command="{Binding AuditoriumCommand2}"
                     Content="Theater 2"
-                    Foreground="Black"
-                    Style="{StaticResource MaterialDesignOutlinedDarkButton}" />
+                    Foreground="White"
+                    Style="{StaticResource MaterialDesignOutlinedDarkButton}" BorderBrush="{x:Null}" />
 
 
                 <Button
@@ -76,8 +76,8 @@
                     BorderThickness="0"
                     Command="{Binding AuditoriumCommand3}"
                     Content="Theater 3"
-                    Foreground="Black"
-                    Style="{StaticResource MaterialDesignOutlinedDarkButton}" />
+                    Foreground="White"
+                    Style="{StaticResource MaterialDesignOutlinedDarkButton}" BorderBrush="{x:Null}" />
 
 
                 <Button
@@ -86,18 +86,18 @@
                     BorderThickness="0"
                     Command="{Binding AuditoriumCommand4}"
                     Content="Theater 4"
-                    Foreground="Black"
-                    Style="{StaticResource MaterialDesignOutlinedDarkButton}" />
+                    Foreground="White"
+                    Style="{StaticResource MaterialDesignOutlinedDarkButton}" BorderBrush="{x:Null}" />
 
 
                 <Button
                     Height="60"
-                    Background="Transparent"
+                    Background="{x:Null}"
                     BorderThickness="0"
                     Command="{Binding AuditoriumCommand5}"
                     Content="Theater 5"
-                    Foreground="Black"
-                    Style="{StaticResource MaterialDesignOutlinedDarkButton}" />
+                    Foreground="White"
+                    Style="{StaticResource MaterialDesignOutlinedDarkButton}" BorderBrush="{x:Null}" />
 
 
                 <Button
@@ -106,8 +106,8 @@
                     BorderThickness="0"
                     Command="{Binding AuditoriumCommand6}"
                     Content="Theater 6"
-                    Foreground="Black"
-                    Style="{StaticResource MaterialDesignOutlinedDarkButton}" />
+                    Foreground="White"
+                    Style="{StaticResource MaterialDesignOutlinedDarkButton}" BorderBrush="{x:Null}" />
 
 
                 <Button
@@ -116,18 +116,27 @@
                     BorderThickness="0"
                     Command="{Binding AuditoriumCommand7}"
                     Content="Theater 7"
-                    Foreground="Black"
-                    Style="{StaticResource MaterialDesignOutlinedDarkButton}" />
+                    Foreground="White"
+                    Style="{StaticResource MaterialDesignOutlinedDarkButton}" BorderBrush="{x:Null}" />
 
 
                 <DatePicker
-                    Width="100"
+                    Width="107"
                     Margin="0,0,10,0"
                     materialDesign:HintAssist.Hint="Select date"
                     materialDesign:TextFieldAssist.HasClearButton="True"
                     DockPanel.Dock="Right"
                     Style="{StaticResource MaterialDesignFloatingHintDatePicker}" 
-                    SelectedDate="{Binding FilterStartDate, UpdateSourceTrigger=PropertyChanged}"/>
+                    SelectedDate="{Binding FilterStartDate, UpdateSourceTrigger=PropertyChanged}" Foreground="White" RenderTransformOrigin="0.5,0.5">
+                    <DatePicker.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-2"/>
+                        </TransformGroup>
+                    </DatePicker.RenderTransform>
+                </DatePicker>
 
 
                 <Button
@@ -135,10 +144,10 @@
                     Height="37"
                     Margin="0,0,0,0"
                     Command="{Binding AddShowTimeCommand}"
-                    Style="{StaticResource MaterialDesignOutlinedDarkButton}">
+                    Style="{StaticResource MaterialDesignOutlinedDarkButton}" BorderBrush="{x:Null}" Foreground="White">
                     <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Height="20" Kind="PlaylistPlus" />
-                        <TextBlock Margin="10,0,0,0" Text="Add Show Session" />
+                        <materialDesign:PackIcon Height="20" Kind="PlaylistPlus" Foreground="White" />
+                        <TextBlock Margin="10,0,0,0" Text="Add Show Session" Foreground="White" />
                     </StackPanel>
                 </Button>
 
@@ -221,7 +230,7 @@
                                         <materialDesign:PackIcon
                                                 Width="30"
                                                 Height="30"
-                                                Kind="GarbageCanEmpty" />
+                                                Kind="GarbageCanEmpty" Foreground="#E5FF0101" />
                                         <i:Interaction.Triggers>
                                             <i:EventTrigger EventName="MouseLeftButtonUp">
                                                 <i:InvokeCommandAction Command="{Binding DataContext.DeleteShowtimeCommand, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" CommandParameter="{Binding}" />

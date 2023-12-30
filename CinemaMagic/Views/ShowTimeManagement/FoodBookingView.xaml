@@ -58,7 +58,7 @@
                         VerticalAlignment="Center"
                         FontSize="25"
                         FontWeight="DemiBold"
-                        Text="Product categories" />
+                        Text="Product categories" FontFamily="Segoe Print" />
                 </StackPanel>
 
 
@@ -512,7 +512,7 @@
                     materialDesign:ButtonAssist.CornerRadius="15"
                     Command="{Binding ContinueCommand}"
                     Content="Continue"
-                    FontSize="20" />
+                    FontSize="20" BorderBrush="{x:Null}" Background="#FF04A983" />
             </Grid>
         </Grid>
 
