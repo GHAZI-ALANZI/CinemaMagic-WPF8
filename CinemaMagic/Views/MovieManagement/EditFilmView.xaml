@@ -42,7 +42,7 @@
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
-                Background="#DFD7BF"
+                Background="{DynamicResource tobbarbackground}"
                 CornerRadius="12,12,0,0">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -54,10 +54,10 @@
                         Grid.Column="0"
                         Margin="20,0,0,0"
                         VerticalAlignment="Center"
-                        FontFamily="Candara"
+                        FontFamily="Segoe Print"
                         FontSize="20"
                         FontWeight="SemiBold"
-                        Foreground="#3F2305"
+                        Foreground="White"
                         Text="Edit movie information" />
 
 
@@ -70,7 +70,7 @@
                         Cursor="Hand"
                         FontFamily="Montserrat"
                         FontSize="12"
-                        Foreground="#fffaf5">
+                        Foreground="#fffaf5" Background="#FFE90606">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="#3f2305" />
@@ -246,9 +246,9 @@
 
 
                     <Button
-                        Width="130"
+                        Width="145"
                         Margin="20,-40,0,0"
-                        Command="{Binding addImageCommand}">
+                        Command="{Binding addImageCommand}" Background="#FF056980">
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Margin="-2,0,0,0" Kind="FolderImage" />
@@ -457,7 +457,7 @@
                     VerticalAlignment="Bottom"
                     Command="{Binding acceptCommand}"
                     Content="Done"
-                    DockPanel.Dock="Right" />
+                    DockPanel.Dock="Right" Background="#FF0FA306" />
 
             </DockPanel>
 

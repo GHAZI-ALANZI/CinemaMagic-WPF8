@@ -206,11 +206,11 @@
                             Height="28"
                             VerticalContentAlignment="Center"
                             Background="Transparent"
-                            BorderBrush="#DBC4AD"
+                            BorderBrush="#FF00E666"
                             BorderThickness="0,0,0,1"
                             CaretBrush="SaddleBrown"
                             FontFamily="Montserrat"
-                            FontSize="13"
+                            FontSize="18"
                             FontWeight="Medium"
                             Foreground="White"
                             Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" />
@@ -244,11 +244,11 @@
                             Height="28"
                             VerticalContentAlignment="Center"
                             Background="Transparent"
-                            BorderBrush="#DBC4AD"
+                            BorderBrush="#FF0FAD14"
                             BorderThickness="0,0,0,1"
                             CaretBrush="SaddleBrown"
                             FontFamily="Montserrat"
-                            FontSize="13"
+                            FontSize="18"
                             FontWeight="Medium"
                             Foreground="White" />
                     </DockPanel>

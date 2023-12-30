@@ -62,7 +62,7 @@
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="4"
-                Background="#DFD7BF"
+                Background="{DynamicResource tobbarbackground}"
                 CornerRadius="12,12,0,0">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -76,10 +76,10 @@
                         Grid.Column="0"
                         Margin="20,0,0,0"
                         VerticalAlignment="Center"
-                        FontFamily="Candara"
+                        FontFamily="Segoe Print"
                         FontSize="20"
                         FontWeight="SemiBold"
-                        Foreground="#3F2305"
+                        Foreground="White"
                         Text="Movie details" />
 
 
@@ -92,10 +92,10 @@
                         Cursor="Hand"
                         FontFamily="Montserrat"
                         FontSize="12"
-                        Foreground="#fffaf5">
+                        Foreground="White" BorderBrush="{x:Null}">
                         <Button.Style>
                             <Style TargetType="Button">
-                                <Setter Property="Background" Value="#3f2305" />
+                                <Setter Property="Background" Value="#FFFF0F26" />
                                 <Style.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter Property="Background" Value="#8B580B" />
@@ -144,10 +144,13 @@
                 Grid.RowSpan="7"
                 Grid.Column="1"
                 Margin="10"
-                Background="#3f2305"
-                BorderBrush="Black"
-                BorderThickness="0.5"
                 CornerRadius="5">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF021F2F"/>
+                        <GradientStop Color="#FF055583" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
                 <Border.Effect>
                     <DropShadowEffect />
                 </Border.Effect>

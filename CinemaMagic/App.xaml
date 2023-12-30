@@ -21,6 +21,10 @@
                 <GradientStop Color="#FF105A5A" Offset="0.066"/>
                 <GradientStop Color="#FF000E0E" Offset="0.626"/>
             </LinearGradientBrush>
+            <LinearGradientBrush x:Key="tobbarbackground" EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF052835" Offset="0.24"/>
+                <GradientStop Color="#FF0D6B8F" Offset="1"/>
+            </LinearGradientBrush>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
