@@ -335,7 +335,7 @@
                         SelectedValue="{Binding Status}"
                         SelectedValuePath="Content">
                         <ComboBoxItem Content="Currently released" />
-                        <ComboBoxItem Content="Discontinued" Visibility="Collapsed" />
+                        <ComboBoxItem Content="Ceased released" Visibility="Collapsed" />
 
                     </ComboBox>
                 </StackPanel>

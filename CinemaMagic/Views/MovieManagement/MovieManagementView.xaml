@@ -106,8 +106,8 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
             <ComboBoxItem>All</ComboBoxItem>
-            <ComboBoxItem>Currently releasing</ComboBoxItem>
-            <ComboBoxItem>Ceased distribution</ComboBoxItem>
+            <ComboBoxItem>Currently released</ComboBoxItem>
+            <ComboBoxItem>Ceased released</ComboBoxItem>
         </ComboBox>
 
 

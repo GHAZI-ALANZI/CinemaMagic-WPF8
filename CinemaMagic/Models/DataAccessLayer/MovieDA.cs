@@ -160,7 +160,7 @@ namespace CinemaMagic.Models.DataAccessLayer
                         +
                         "from movie\n"
                         +
-                        "where Status=N'Đang phát hành'";
+                        "where Status=N'Currently released'";
 
 
                     using (SqlCommand command = new SqlCommand(truyvan, connection))

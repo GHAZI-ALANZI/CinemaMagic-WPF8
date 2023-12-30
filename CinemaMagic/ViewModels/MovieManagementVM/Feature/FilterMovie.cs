@@ -65,11 +65,11 @@ namespace CinemaMagic.ViewModels.MovieManagementVM
             ObservableCollection<MovieDTO> getDSSP = data.getAllMovie();
             foreach (var item in getDSSP)
             {
-                if (item.Status == "Currently screening")
+                if (item.Status == "Currently released")
                 {
                     DSPhim_DPH.Add(item);
                 }
-                else if (item.Status == "Stopped screening")
+                else if (item.Status == "Ceased released")
                 {
                     DSPhim_NPH.Add(item);
                 }

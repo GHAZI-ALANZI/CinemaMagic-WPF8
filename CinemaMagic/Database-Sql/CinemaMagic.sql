@@ -130,25 +130,25 @@ create table Auditorium
 )
 
 insert into Auditorium(Name,NumberOfSeats)
-values(N'Phòng 1',176)
+values(N'Theater 1',176)
 
 insert into Auditorium(Name,NumberOfSeats)
-values(N'Phòng 2',176)
+values(N'Theater 2',176)
 
 insert into Auditorium(Name,NumberOfSeats)
-values(N'Phòng 3',176)
+values(N'Theater 3',176)
 
 insert into Auditorium(Name,NumberOfSeats)
-values(N'Phòng 4',176)
+values(N'Theater 4',176)
 
 insert into Auditorium(Name,NumberOfSeats)
-values(N'Phòng 5',176)
+values(N'Theater 5',176)
 
 insert into Auditorium(Name,NumberOfSeats)
-values(N'Phòng 6',176)
+values(N'Theater 6',176)
 
 insert into Auditorium(Name,NumberOfSeats)
-values(N'Phòng 7',176)
+values(N'Theater 7',176)
 
 
 

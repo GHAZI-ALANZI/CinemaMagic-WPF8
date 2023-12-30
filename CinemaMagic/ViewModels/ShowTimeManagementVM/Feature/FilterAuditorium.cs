@@ -32,7 +32,7 @@ namespace CinemaMagic.ViewModels.ShowTimeManagementVM
         }
 
 
-        private void auditorium(object obj)//all rooms
+        private void auditorium(object obj)//all Theaters
         {
             loadData();
             phong = "All";
@@ -40,38 +40,38 @@ namespace CinemaMagic.ViewModels.ShowTimeManagementVM
 
         private void auditorium1(object obj)
         {
-            loadData("Phòng 1");
-            phong = "Phòng 1";
+            loadData("Theater 1");
+            phong = "Theater 1";
         }
         private void auditorium2(object obj)
         {
-            loadData("Phòng 2");
-            phong = "Phòng 2";
+            loadData("Theater 2");
+            phong = "Theater 2";
         }
         private void auditorium3(object obj)
         {
-            loadData("Phòng 3");
-            phong = "Phòng 3";
+            loadData("Theater 3");
+            phong = "Theater 3";
         }
         private void auditorium4(object obj)
         {
-            loadData("Phòng 4");
-            phong = "Phòng 4";
+            loadData("Theater 4");
+            phong = "Theater 4";
         }
         private void auditorium5(object obj)
         {
-            loadData("Phòng 5");
-            phong = "Phòng 5";
+            loadData("Theater 5");
+            phong = "Theater 5";
         }
         private void auditorium6(object obj)
         {
-            loadData("Phòng 6");
-            phong = "Phòng 6";
+            loadData("Theater 6");
+            phong = "Theater 6";
         }
         private void auditorium7(object obj)
         {
-            loadData("Phòng 7");
-            phong = "Phòng 7";
+            loadData("Theater 7");
+            phong = "Theater 7";
         }
     }
 }
