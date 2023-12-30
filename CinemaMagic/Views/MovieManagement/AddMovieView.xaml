@@ -334,8 +334,8 @@
                         FontSize="15"
                         SelectedValue="{Binding Status}"
                         SelectedValuePath="Content">
-                        <ComboBoxItem Content="Đang phát hành" />
-                        <ComboBoxItem Content="Ngưng phát hành" Visibility="Collapsed" />
+                        <ComboBoxItem Content="Currently released" />
+                        <ComboBoxItem Content="Discontinued" Visibility="Collapsed" />
 
                     </ComboBox>
                 </StackPanel>

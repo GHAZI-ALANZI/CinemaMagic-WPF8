@@ -3,21 +3,24 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:CinemaMagic.Views"
-        Title="MainView"
-        Width="1200"
-        Height="675"
-        AllowsTransparency="True"
-        Background="Transparent"
-        FontFamily="Segoe UI"
-        ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen"
-        WindowStyle="None"
-        mc:Ignorable="d"
-        Deactivated="Window_Deactivated"
-        Activated="Window_Activated"
-        x:Name="mainUC">
+           xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+   
+    
+    Title="MainView"
+    Width="1200"
+    Height="675"
+    AllowsTransparency="True"
+    Background="Transparent"
+    FontFamily="Segoe UI"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d"
+    Deactivated="Window_Deactivated"
+    Activated="Window_Activated"
+    x:Name="mainUC">
+
 
     <Window.Triggers>
         <EventTrigger RoutedEvent="Loaded">
@@ -69,7 +72,7 @@
                         FontSize="20"
                         FontWeight="SemiBold"
                         Foreground="#3F2305"
-                        Text="CinemaMagic" />
+                        Text="CineMajestic" />
                     <Button
                         x:Name="btnMinimize"
                         Grid.Column="1"
@@ -165,7 +168,7 @@
                         CommandParameter="Movies"
                         FontWeight="Medium"
                         Foreground="Black"
-                        Style="{StaticResource MaterialDesignFlatButton}">
+                        >
 
                         <StackPanel
                             Margin="-50,0,0,0"
@@ -215,15 +218,7 @@
                         CommandParameter="ShowTime"
                         FontWeight="Medium"
                         Foreground="Black"
-                        Style="{StaticResource MaterialDesignFlatButton}" RenderTransformOrigin="0.5,0.5">
-                        <Button.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform/>
-                                <SkewTransform/>
-                                <RotateTransform/>
-                                <TranslateTransform X="-17"/>
-                            </TransformGroup>
-                        </Button.RenderTransform>
+                        >
 
                         <StackPanel
                             Margin="-12,0,0,0"
@@ -239,16 +234,7 @@
                                 Margin="9,0,0,0"
                                 VerticalAlignment="Center"
                                 FontSize="15"
-                                FontWeight="SemiBold" Text="Show Schedule" RenderTransformOrigin="0.5,0.5" >
-                                <TextBlock.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform/>
-                                        <SkewTransform/>
-                                        <RotateTransform/>
-                                        <TranslateTransform X="-2"/>
-                                    </TransformGroup>
-                                </TextBlock.RenderTransform>
-                            </TextBlock>
+                                FontWeight="SemiBold" Text="Screening Schedule" />
                         </StackPanel>
                     </Button>
 
@@ -262,7 +248,7 @@
                         CommandParameter="Staff"
                         FontWeight="Medium"
                         Foreground="Black"
-                        Style="{StaticResource MaterialDesignFlatButton}"
+                        
                         Click="Button_Click"
                         materialDesign:ButtonAssist.CornerRadius="15" RenderTransformOrigin="0.5,0.5">
                         <Button.RenderTransform>
@@ -302,7 +288,7 @@
                         CommandParameter="Customer"
                         FontWeight="Medium"
                         Foreground="Black"
-                        Style="{StaticResource MaterialDesignFlatButton}"
+                      
                         Click="Button_Click"
                         materialDesign:ButtonAssist.CornerRadius="15">
                         <StackPanel
@@ -334,7 +320,7 @@
                         CommandParameter="QLSP"
                         FontWeight="Medium"
                         Foreground="Black"
-                        Style="{StaticResource MaterialDesignFlatButton}"
+                       
                         Click="Button_Click"
                         materialDesign:ButtonAssist.CornerRadius="15">
                         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
@@ -343,7 +329,7 @@
                                 Height="25"
                                 Margin="-18,0,0,0">
                                 <Grid.Background>
-                                    <ImageBrush ImageSource="pack://application:,,,/Icon/QLProduct.png" />
+                                    <ImageBrush ImageSource="/Views/QLProduct.png" />
                                 </Grid.Background>
                             </Grid>
 
@@ -367,7 +353,7 @@
                         CommandParameter="Vouchers"
                         FontWeight="Medium"
                         Foreground="Black"
-                        Style="{StaticResource MaterialDesignFlatButton}"
+                      
                         Click="Button_Click"
                         materialDesign:ButtonAssist.CornerRadius="15">
                         <StackPanel
@@ -397,7 +383,7 @@
                             CommandParameter="Statistics"
                             FontWeight="Medium"
                             Foreground="Black"
-                            Style="{StaticResource MaterialDesignFlatButton}"
+                          
                             Click="Button_Click"
                             materialDesign:ButtonAssist.CornerRadius="15">
                         <StackPanel VerticalAlignment="Center" Orientation="Horizontal"
@@ -425,7 +411,7 @@
                             CommandParameter="Error"
                             FontWeight="Medium"
                             Foreground="Black"
-                            Style="{StaticResource MaterialDesignFlatButton}"
+                         
                             Click="Button_Click"
                             materialDesign:ButtonAssist.CornerRadius="15">
                         <StackPanel VerticalAlignment="Center" Orientation="Horizontal"
@@ -453,7 +439,7 @@
                         CommandParameter="Personal"
                         FontWeight="Medium"
                         Foreground="Black"
-                        Style="{StaticResource MaterialDesignFlatButton}"
+                       
                         Click="Button_Click"
                         materialDesign:ButtonAssist.CornerRadius="15">
                         <StackPanel
@@ -484,7 +470,7 @@
                         Click="btnLogout_Click"
                         FontWeight="Medium"
                         Foreground="Black"
-                        Style="{StaticResource MaterialDesignFlatButton}"
+                        
                         materialDesign:ButtonAssist.CornerRadius="15">
                         <StackPanel
                             Margin="-55,0,0,0"
@@ -495,7 +481,7 @@
                                 Height="25"
                                 Margin="-21,0,0,0">
                                 <Grid.Background>
-                                    <ImageBrush ImageSource="pack://application:,,,/Icon/logout.png" />
+                                    <ImageBrush ImageSource="/Views/logout.png" />
                                 </Grid.Background>
                             </Grid>
                             <TextBlock

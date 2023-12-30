@@ -8,11 +8,17 @@ namespace CinemaMagic
     /// </summary>
     public partial class App : Application
     {
-        private void ApplicationStart(object sender, EventArgs e)
+
+        protected override void OnStartup(StartupEventArgs e)
         {
-            LoginView loginView = new LoginView();
-            loginView.Show();
+            base.OnStartup(e);
+
+            // Assuming your startup window class is StartWindow
+            LoginView window = new LoginView();
+            window.Show();
         }
+
+
     }
 
 }
