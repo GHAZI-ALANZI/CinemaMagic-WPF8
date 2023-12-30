@@ -59,7 +59,7 @@ namespace CinemaMagic.Views
             btnSuCo.Background = Brushes.Transparent;
             btnThongKe.Background = Brushes.Transparent;
             Button button = (Button)sender;
-            button.Background = new SolidColorBrush(Color.FromRgb(245, 245, 245));
+            button.Background = new SolidColorBrush(Color.FromRgb(0, 11, 207));
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
